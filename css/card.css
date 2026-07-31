@@ -1,0 +1,156 @@
+/* css/card.css */
+
+.pdf-card {
+    background-color: var(--bg-color);
+    border: var(--border-thick) var(--border-color);
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Contains the expanding background shape and giant bg geometry */
+    box-shadow: var(--shadow-solid);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.pdf-card:hover {
+    transform: translate(-6px, -6px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Force text to stay black and readable above the colored flood */
+.pdf-card:hover * {
+    color: #111111;
+    border-color: #111111;
+}
+
+/* --------------------------------------
+   NEW: CARD BACKGROUND GEOMETRY
+---------------------------------------*/
+.card-bg-geometry {
+    position: absolute;
+    opacity: 0.15; /* Subtle mini-poster effect inside the card */
+    z-index: 0;
+    background-color: var(--card-hover-color); /* Matches the card's specific primary color */
+    transition: opacity var(--transition-speed);
+}
+
+/* Fade out the static background when the card is hovered so the flood takes over cleanly */
+.pdf-card:hover .card-bg-geometry {
+    opacity: 0;
+}
+
+/* --------------------------------------
+   NEW: DYNAMIC CARD BACKGROUND GEOMETRY
+---------------------------------------*/
+.card-bg-geometry {
+    position: absolute;
+    opacity: 0.15; 
+    z-index: 0;
+    background-color: var(--card-hover-color); 
+    transition: opacity var(--transition-speed);
+}
+
+.pdf-card:hover .card-bg-geometry {
+    opacity: 0;
+}
+
+/* Shape 1: Giant Circle bleeding off the top right */
+.bg-shape-1 {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    top: -80px;
+    right: -80px;
+}
+
+/* Shape 2: Heavy Angled Slab cutting across the bottom left */
+.bg-shape-2 {
+    width: 300px;
+    height: 140px;
+    bottom: 10px;
+    left: -60px;
+    transform: rotate(-35deg);
+}
+
+/* Shape 3: Strict Right-Angled Triangle anchored to bottom right */
+.bg-shape-3 {
+    width: 180px;
+    height: 180px;
+    bottom: 0;
+    right: 0;
+    /* Uses CSS clip-path to slice the square into a sharp triangle */
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* Shape 4: Perfect Half-Circle mounted flush against the left wall */
+.bg-shape-4 {
+    width: 120px;
+    height: 240px;
+    top: 20px;
+    left: 0;
+    border-radius: 0 240px 240px 0; /* Curves the right side, flat on the left */
+}
+
+/* --------------------------------------
+   THE HOVER FLOOD (KEPT)
+---------------------------------------*/
+.hover-flood {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--card-hover-color);
+    border-radius: 50%;
+    z-index: 0;
+    transform: scale(0);
+    transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.pdf-card:hover .hover-flood {
+    transform: scale(150);
+}
+
+/* --------------------------------------
+   STRUCTURAL QUADRANTS & TYPOGRAPHY
+---------------------------------------*/
+.card-top {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border-bottom: var(--border-thick) var(--border-color);
+    position: relative;
+    z-index: 1; /* Keeps content above the flood and bg geometry */
+}
+
+.card-bottom {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card-number {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 0.75;
+    color: var(--border-color);
+    transition: color var(--transition-speed);
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: auto;
+}

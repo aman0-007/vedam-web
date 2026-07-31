@@ -1,0 +1,45 @@
+/* css/variables.css */
+
+:root {
+    /* Bauhaus Color Palette */
+    --bauhaus-red: #E03C31;
+    --bauhaus-blue: #1F569D;
+    --bauhaus-yellow: #F2B705;
+
+    /* Typography */
+    --font-main: 'Jost', sans-serif;
+
+    /* Structural Elements - Bauhaus is rigid and geometric */
+    --border-thick: 4px solid;
+    --border-thin: 2px solid;
+    --radius-none: 0px;
+    /* No rounded corners in strict Bauhaus */
+
+    /* Default Light Theme Variables */
+    --bg-color: #F4F4F0;
+    /* Off-white / canvas */
+    --text-color: #111111;
+    /* Stark black */
+    --border-color: #111111;
+
+    /* Brutalist / Geometric Shadows */
+    --shadow-solid: 6px 6px 0px var(--border-color);
+    --shadow-hover: 10px 10px 0px var(--border-color);
+
+    /* Transitions */
+    --transition-speed: 0.2s ease-in-out;
+}
+
+/* Dark Theme Variables */
+body.dark-theme {
+    --bg-color: #111111;
+    /* Stark black background */
+    --text-color: #F4F4F0;
+    /* Off-white text */
+    --border-color: #F4F4F0;
+    /* Off-white borders */
+
+    /* Update shadow to pop against the dark background */
+    --shadow-solid: 6px 6px 0px var(--border-color);
+    --shadow-hover: 10px 10px 0px var(--border-color);
+}

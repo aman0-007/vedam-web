@@ -1,0 +1,110 @@
+/* css/theme.css */
+
+.theme-btn {
+    display: flex;
+    gap: 10px;
+    padding: 8px 12px;
+    border: var(--border-thick) var(--border-color);
+    background-color: transparent;
+    transition: box-shadow var(--transition-speed), transform 0.1s;
+}
+
+/* Brutalist hover effect */
+.theme-btn:hover {
+    box-shadow: var(--shadow-solid);
+    transform: translate(-2px, -2px);
+}
+
+.theme-btn:active {
+    box-shadow: none;
+    transform: translate(2px, 2px);
+}
+
+/* Base geometric shapes inside the button */
+.shape {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: var(--border-thin) var(--border-color);
+    transition: background-color var(--transition-speed);
+}
+
+.shape.circle {
+    border-radius: 50%;
+    /* The only curve allowed */
+    background-color: var(--bauhaus-red);
+}
+
+.shape.square {
+    background-color: var(--bauhaus-blue);
+}
+
+/* When dark mode is active, the shapes shift to high-contrast colors */
+body.dark-theme .shape.circle {
+    background-color: var(--bauhaus-yellow);
+}
+
+body.dark-theme .shape.square {
+    background-color: var(--bauhaus-red);
+}
+
+/* css/theme.css */
+
+.brutalist-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.toggle-text {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--text-color);
+}
+
+/* The outer track of the switch */
+.toggle-track {
+    width: 64px;
+    height: 32px;
+    border: var(--border-thick) var(--border-color);
+    background-color: var(--bg-color);
+    position: relative;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px var(--border-color); /* Hard mechanical shadow */
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+/* The physical sliding block */
+.toggle-block {
+    position: absolute;
+    top: -2px; /* Offset to account for the thick border */
+    left: -2px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--bauhaus-red);
+    border: var(--border-thick) var(--border-color);
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1), background-color 0.4s;
+    z-index: 2;
+}
+
+/* Dark Mode State for the Toggle */
+body.dark-theme .toggle-block {
+    transform: translateX(32px); /* Slides exactly to the other half */
+    background-color: var(--bauhaus-yellow); /* Color shift */
+}
+
+/* Active press state to feel like a real button */
+.brutalist-toggle:active .toggle-track {
+    box-shadow: 0px 0px 0px var(--border-color);
+    transform: translate(4px, 4px);
+}
+
+@media (max-width: 768px) {
+    .toggle-text {
+        display: none; /* Hide text on smaller screens */
+    }
+}

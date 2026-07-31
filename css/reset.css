@@ -1,0 +1,66 @@
+/* css/reset.css */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+img,
+picture,
+video,
+canvas,
+svg,
+iframe {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 800;
+    /* Bold geometric headers */
+    line-height: 1.1;
+    text-transform: uppercase;
+    /* Bauhaus loves uppercase structure */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

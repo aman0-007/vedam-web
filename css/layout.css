@@ -1,0 +1,105 @@
+/* css/layout.css */
+
+/* THE CANVAS & STRUCTURAL LINES */
+.bauhaus-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Keeps it behind the content */
+    overflow: hidden;
+}
+
+.structural-line-vertical {
+    position: absolute;
+    left: 10%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--border-color);
+    transition: background-color var(--transition-speed);
+}
+
+.giant-shape {
+    position: absolute;
+    opacity: 0.15; /* Subtle enough to read text, bold enough to destroy the "blankness" */
+    transition: opacity var(--transition-speed);
+}
+
+.bg-circle {
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background-color: var(--bauhaus-red);
+    top: -150px;
+    right: -150px;
+}
+
+.bg-rectangle {
+    width: 400px;
+    height: 800px;
+    background-color: var(--bauhaus-yellow);
+    bottom: -200px;
+    left: 20%;
+    transform: rotate(45deg);
+}
+
+/* HEADER UPGRADES */
+.site-header {
+    width: 100%;
+    border-bottom: var(--border-thick) var(--border-color);
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px); /* Keeps text readable when scrolling over shapes */
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: clamp(3rem, 6vw, 5rem); /* Massive responsive typography */
+    letter-spacing: -2px; /* Tight, aggressive tracking */
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1;
+}
+
+.logo .dot {
+    color: var(--bauhaus-red); /* Anchor the logo with a primary color */
+}
+
+/* SIDEWAYS TEXT (Bauhaus signature) */
+.side-title {
+    position: fixed;
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left center;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    z-index: 50;
+}
+
+/* THE GRID - TIGHTENED UP */
+.content-grid {
+    max-width: 1100px;
+    /* Pushed to the right slightly to balance the vertical line */
+    margin: 6rem auto 6rem 15%; 
+    padding: 0 2rem;
+    display: grid;
+    /* Shrinking the cards: reduced minmax from 300px to 220px */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem; /* Tighter gap */
+}

@@ -1,7 +1,7 @@
 // js/render.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    const gridContainer = document.getElementById('pdf-grid');
+    const gridContainer = document.getElementById('text-grid');
 
     if (typeof vedasData === 'undefined') {
         console.error("vedasData is not defined. Check data.js.");
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('article');
         card.classList.add('pdf-card');
         
-        card.dataset.pdfUrl = veda.pdfUrl;
+        card.dataset.pdfUrl = veda.txtUrl;
         card.dataset.title = veda.title;
         
         // Dynamic color for both the hover flood and the background geometry

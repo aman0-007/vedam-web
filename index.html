@@ -19,10 +19,8 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/card.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/pdf-ui.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <link rel="stylesheet" href="css/reader.css">
+    <link rel="stylesheet" href="css/reading-bg.css">
 
 </head>
 
@@ -51,47 +49,33 @@
     <!-- Sideways title element characteristic of Bauhaus -->
     <div class="side-title">ANCIENT TEXTS / MODERN GRID</div>
 
-    <main class="content-grid" id="pdf-grid">
+    <main class="content-grid" id="text-grid">
         <!-- PDF Cards will be injected here by JS -->
     </main>
 
-    <!-- Fullscreen PDF Viewer Modal remains the same -->
-    <div id="pdf-modal" class="modal hidden">
-        <div class="modal-body">
+    <div id="text-modal" class="modal hidden">
+        
+        <!-- MODULAR BACKGROUND: Controlled by CSS classes -->
+        <div id="reader-bg" class="reading-bg bauhaus-bg-1" aria-hidden="true"></div>
 
-            <!-- ADVANCED BAUHAUS GEOMETRIC LOADER -->
-            <div id="bauhaus-loader" class="bauhaus-loader fade-out">
-                <div class="loader-shapes">
-                    <div class="loader-circle"></div>
-                    <div class="loader-square"></div>
-                    <div class="loader-line"></div>
-                </div>
-                <p class="loader-text">LOADING<span class="loader-dots">...</span></p>
-            </div>
+        <!-- HUD: Close Button & Controls -->
+        <button id="close-reader" class="bauhaus-close" aria-label="Close Reader">✕</button>
+        
+        <div class="bauhaus-toolbar">
+            <button id="bg-swap" class="tool-btn bg-blue" aria-label="Swap Theme">◧</button>
+            <button id="font-decrease" class="tool-btn bg-black" aria-label="Decrease Font">−</button>
+            <div id="font-indicator" class="tool-info">100%</div>
+            <button id="font-increase" class="tool-btn bg-black" aria-label="Increase Font">+</button>
+        </div>
 
-            <!-- PDF Canvas Container -->
-            <div id="pdf-render-container">
-                <canvas id="pdf-canvas"></canvas>
-            </div>
-
-            <!-- NEW: True Bauhaus Floating HUD -->
-            <div id="pdf-floating-ui" class="pdf-floating-ui hidden">
-                <!-- Close Button (Fixed to Viewport Corner) -->
-                <button id="close-modal" class="bauhaus-close" aria-label="Close Reader">✕</button>
-                
-                <!-- Unified Bauhaus Control Strip (Bottom Center) -->
-                <div class="bauhaus-toolbar">
-                    <button id="prev-page" class="tool-btn bg-yellow" aria-label="Previous Page">◀</button>
-                    <button id="zoom-out" class="tool-btn bg-black" aria-label="Zoom Out">−</button>
-                    
-                    <div id="page-info" class="tool-info">1 / --</div>
-                    
-                    <button id="zoom-in" class="tool-btn bg-black" aria-label="Zoom In">+</button>
-                    <button id="rotate-page" class="tool-btn bg-black" aria-label="Rotate Page">↻</button>
-                    <button id="next-page" class="tool-btn bg-yellow" aria-label="Next Page">▶</button>
-                </div>
-            </div>
-
+        <!-- The Text Content -->
+        <div class="text-scroll-container">
+            <article class="text-column">
+                <h2 id="text-title" class="reading-title">TITLE</h2>
+                <div class="title-divider"></div>
+                <!-- white-space: pre-wrap will keep your .txt formatting perfectly -->
+                <div id="text-content" class="reading-content"></div>
+            </article>
         </div>
     </div>
 
@@ -99,8 +83,7 @@
     <script src="js/data.js" defer></script>
     <script src="js/theme.js" defer></script>
     <script src="js/render.js" defer></script>
-    <script src="js/pdf-engine.js" defer></script>
-    <script src="js/viewer-ui.js" defer></script>
+    <script src="js/text-engine.js" defer></script>
 </body>
 
 </html>

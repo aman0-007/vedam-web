@@ -3,9 +3,9 @@
 const vedasData = [
     {
         id: "01",
-        title: "Namakam",
-        description: "The Book of Mantra. The oldest layer of Vedic Sanskrit texts.",
-        pdfUrl: "assets/pdfs/RUDRAM_NAMAKAM.pdf",
+        title: "Ganapati Prarthana",
+        description: "Vedic prayers dedicated to Lord Ganesha.",
+        txtUrl: "assets/txts/ganapati-prarthana.txt",
         hoverColor: "var(--bauhaus-red)"
     },
     {

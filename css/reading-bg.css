@@ -1,0 +1,40 @@
+/* css/reading-bg.css */
+
+.reading-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none; /* Text scrolls freely over it */
+    opacity: 0.15; /* Subtle exhibition poster effect */
+    transition: background-image 0.4s ease-in-out;
+}
+
+/* Background Theme 1: Giant Red Circle + Yellow Diagonal Slab */
+.bauhaus-bg-1 {
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(circle at 85% 15%, var(--bauhaus-red) 300px, transparent 301px),
+        linear-gradient(45deg, transparent 45%, var(--bauhaus-yellow) 45%, var(--bauhaus-yellow) 55%, transparent 55%);
+}
+
+/* Background Theme 2: Huge Blue Semi-Circle + Strict Grid Lines */
+.bauhaus-bg-2 {
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(circle at 0% 100%, var(--bauhaus-blue) 400px, transparent 401px),
+        repeating-linear-gradient(90deg, transparent, transparent 100px, #111111 100px, #111111 104px);
+}
+
+/* Background Theme 3: Stark Yellow Triangle + Heavy Base */
+.bauhaus-bg-3 {
+    background-color: var(--bg-color);
+    background-image: 
+        linear-gradient(to bottom right, var(--bauhaus-yellow) 50%, transparent 50%),
+        linear-gradient(to top, var(--bauhaus-red) 10%, transparent 10%);
+    background-size: 500px 500px, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: bottom right, bottom left;
+}

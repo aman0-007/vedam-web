@@ -10,23 +10,37 @@ const vedasData = [
     },
     {
         id: "02",
-        title: "shivopasana mantra",
+        title: "Shivopasana Mantra",
         description: "The Book of Song. Melodies and chants for recitation.",
         txtUrl: "assets/txts/shivopasana-mantra.txt",
         hoverColor: "var(--bauhaus-blue)"
     },
     {
         id: "03",
-        title: "Purusha Suktam",
+        title: "Bhagya Suktam",
         description: "The Book of Ritual. Guidebook for the priests.",
-        txtUrl: "assets/txts/PURUSHASUKTAM.txt",
+        txtUrl: "assets/txts/bhagya-suktam.txt",
         hoverColor: "var(--bauhaus-yellow)"
     },
     {
         id: "04",
-        title: "Durva Suktam",
+        title: "Sri Rudram Namakam",
         description: "The Book of Spell. Everyday life, magic, and philosophy.",
-        txtUrl: "assets/txts/durvasuktam.txt",
+        txtUrl: "assets/txts/sri-rudram-namakam.txt",
+        hoverColor: "var(--bauhaus-red)"
+    },
+    {
+        id: "05",
+        title: "Sri Rudram Chamakam",
+        description: "The Book of Spell. Everyday life, magic, and philosophy.",
+        txtUrl: "assets/txts/sri-rudram-chamakam.txt",
+        hoverColor: "var(--bauhaus-red)"
+    },
+    {
+        id: "06",
+        title: "Ganpati Atharvashirsham",
+        description: "The Book of Spell. Everyday life, magic, and philosophy.",
+        txtUrl: "assets/txts/ganpati-atharvashirsham.txt",
         hoverColor: "var(--bauhaus-red)"
     }
 ];

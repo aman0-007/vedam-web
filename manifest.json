@@ -1,0 +1,17 @@
+{
+    "name": "Vedam Reader",
+    "short_name": "Vedam",
+    "description": "Ancient Texts, Modern Grid. A brutalist Vedic reader.",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#F4F4F0",
+    "theme_color": "#111111",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "assets/favicon.svg",
+            "sizes": "192x192 512x512",
+            "type": "image/svg+xml"
+        }
+    ]
+}

@@ -1,5 +1,100 @@
 /* css/reader.css */
 
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+/* --- HUD: CLOSE BUTTON & TOOLBAR --- */
+.bauhaus-close {
+    position: absolute;
+    top: env(safe-area-inset-top, 0);
+    right: env(safe-area-inset-right, 0);
+    width: 44px;
+    height: 44px;
+    background-color: var(--bauhaus-red);
+    color: #111111;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.bauhaus-close:hover {
+    background-color: #111111;
+    color: var(--bauhaus-red);
+}
+
+.bauhaus-toolbar {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    background-color: #111111;
+    border: 2px solid #111111;
+    z-index: 100;
+    opacity: 0.25; 
+    transition: opacity 0.4s ease-in-out;
+}
+
+.tool-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.bauhaus-toolbar:hover,
+.bauhaus-toolbar.active {
+    opacity: 1;
+}
+
+.bg-black { background-color: #111111; color: #ffffff; }
+.bg-black:hover { background-color: var(--bauhaus-yellow); color: #111111; }
+.bg-blue { background-color: var(--bauhaus-blue); color: #ffffff; }
+.bg-blue:hover { background-color: var(--bauhaus-yellow); color: #111111; }
+
+.tool-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 90px;
+    background-color: #ffffff;
+    color: #111111;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
 .text-scroll-container {
     position: relative;
     z-index: 10; /* Sits above the background geometry */
@@ -36,13 +131,21 @@
 
 /* This is the magic CSS that respects your .txt line breaks! */
 .reading-content {
-    white-space: pre-wrap; 
-    font-family: var(--font-main);
-    font-size: 1.2rem;
+    white-space: pre-wrap;     
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 1.4rem;
     font-weight: 600;
-    line-height: 1.8;
+    line-height: 1.6; 
     color: var(--text-color);
     transition: font-size 0.2s ease;
+}
+
+.reading-content center {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--bauhaus-red);
+    margin-bottom: -1rem; /* Pulls the next line of text upwards */
+    display: block;
 }
 
 /* Mobile Adjustments */

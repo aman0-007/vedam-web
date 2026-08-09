@@ -10,23 +10,23 @@ const vedasData = [
     },
     {
         id: "02",
-        title: "Chamakam",
+        title: "shivopasana mantra",
         description: "The Book of Song. Melodies and chants for recitation.",
-        pdfUrl: "assets/pdfs/CHAMAKAM.pdf",
+        txtUrl: "assets/txts/shivopasana-mantra.txt",
         hoverColor: "var(--bauhaus-blue)"
     },
     {
         id: "03",
         title: "Purusha Suktam",
         description: "The Book of Ritual. Guidebook for the priests.",
-        pdfUrl: "assets/pdfs/PURUSHASUKTAM.pdf",
+        txtUrl: "assets/txts/PURUSHASUKTAM.txt",
         hoverColor: "var(--bauhaus-yellow)"
     },
     {
         id: "04",
         title: "Durva Suktam",
         description: "The Book of Spell. Everyday life, magic, and philosophy.",
-        pdfUrl: "assets/pdfs/durvasuktam.pdf",
+        txtUrl: "assets/txts/durvasuktam.txt",
         hoverColor: "var(--bauhaus-red)"
     }
 ];

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('article');
         card.classList.add('pdf-card');
         
-        card.dataset.pdfUrl = veda.txtUrl;
+        card.dataset.txtUrl = veda.txtUrl;
         card.dataset.title = veda.title;
         
         // Dynamic color for both the hover flood and the background geometry

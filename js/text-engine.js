@@ -9,29 +9,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentEl = document.getElementById('text-content');
     const readerBg = document.getElementById('reader-bg');
     const fontIndicator = document.getElementById('font-indicator');
+    const toolbar = document.getElementById('reader-toolbar');
     
     // Buttons
     const btnClose = document.getElementById('close-reader');
     const btnIncrease = document.getElementById('font-increase');
     const btnDecrease = document.getElementById('font-decrease');
-    const btnSwapBg = document.getElementById('bg-swap');
 
     // State Variables
-    let currentFontSize = 1.2; // rem
-    let currentBgIndex = 1;
+    let currentFontSize = 1.2; 
+    let toolbarTimeout; // Tracks the inactivity timer
 
-    // --- FETCH TEXT ENGINE ---
+    const wakeUpToolbar = () => {
+        toolbar.classList.add('active');
+        clearTimeout(toolbarTimeout);
+        
+        toolbarTimeout = setTimeout(() => {
+            toolbar.classList.remove('active');
+        }, 3000); 
+    };
+
+    modal.addEventListener('click', wakeUpToolbar);
+    document.querySelector('.text-scroll-container').addEventListener('scroll', wakeUpToolbar);
+
     const loadTextFile = async (url) => {
         try {
-            // Native vanilla fetch API - works perfectly on Live Server
             const response = await fetch(url);
             if (!response.ok) throw new Error("File not found");
-            
             const text = await response.text();
-            contentEl.textContent = text;
+            contentEl.innerHTML = text; 
         } catch (error) {
             console.error("Error loading text:", error);
-            contentEl.textContent = "Error loading document. Please check the file path.";
+            contentEl.innerHTML = "Error loading document. Please check the file path.";
         }
     };
 
@@ -40,30 +49,31 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = e.target.closest('.pdf-card');
         
         if (card) {
-            // Make sure you updated data.js to use data-txt-url !
             const txtUrl = card.dataset.txtUrl;
             titleEl.textContent = card.dataset.title;
+            
+            const randomBg = Math.floor(Math.random() * 3) + 1;
+            readerBg.className = `reading-bg bauhaus-bg-${randomBg}`;
             
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden'; 
             
-            // Reset font size
             currentFontSize = 1.2;
             contentEl.style.fontSize = `${currentFontSize}rem`;
             fontIndicator.textContent = "100%";
 
             loadTextFile(txtUrl);
-            
-            // Scroll to top
             document.querySelector('.text-scroll-container').scrollTop = 0;
+            
+            wakeUpToolbar();
         }
     });
 
-    // --- HUD CONTROLS ---
-    btnClose.addEventListener('click', () => {
+    btnClose.addEventListener('click', (e) => {
+        e.stopPropagation();
         modal.classList.add('hidden');
         document.body.style.overflow = '';
-        setTimeout(() => { contentEl.textContent = ""; }, 200); 
+        setTimeout(() => { contentEl.innerHTML = ""; }, 200); 
     });
 
     btnIncrease.addEventListener('click', () => {
@@ -80,11 +90,5 @@ document.addEventListener('DOMContentLoaded', () => {
             contentEl.style.fontSize = `${currentFontSize}rem`;
             fontIndicator.textContent = `${Math.round((currentFontSize / 1.2) * 100)}%`;
         }
-    });
-
-    btnSwapBg.addEventListener('click', () => {
-        // Cycle through backgrounds 1, 2, and 3
-        currentBgIndex = currentBgIndex >= 3 ? 1 : currentBgIndex + 1;
-        readerBg.className = `reading-bg bauhaus-bg-${currentBgIndex}`;
     });
 });

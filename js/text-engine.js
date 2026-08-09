@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnIncrease = document.getElementById('font-increase');
     const btnDecrease = document.getElementById('font-decrease');
 
+    const watermarkBg = document.getElementById('paper-watermark');
+
     // State Variables
     let currentFontSize = 1.2; 
     let toolbarTimeout; // Tracks the inactivity timer
@@ -50,11 +52,19 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (card) {
             const txtUrl = card.dataset.txtUrl;
+            const bgSvg = card.dataset.bgSvg;
             titleEl.textContent = card.dataset.title;
             
             const randomBg = Math.floor(Math.random() * 3) + 1;
             readerBg.className = `reading-bg bauhaus-bg-${randomBg}`;
-            
+            readerBg.style.backgroundImage = '';
+
+            if (bgSvg) {
+                watermarkBg.style.backgroundImage = `url('${bgSvg}')`;
+            } else {
+                watermarkBg.style.backgroundImage = 'none';
+            }
+
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden'; 
             

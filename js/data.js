@@ -7,7 +7,9 @@ const vedasData = [
         description: "Initial prayers dedicated to Lord Ganesha.",
         txtUrl: "assets/txts/ganapati-prarthana.txt",
         hoverColor: "var(--bauhaus-red)",
-        tags: ["Ganesha", "Prarthana", "Rudram"]
+        tags: ["Ganesha", "Prarthana", "Rudram"],
+        bgSvg: "assets/svgs/ganesh-bg.svg",
+        iconSvg: "assets/svgs/ganesh-icon.svg"
     },
     {
         id: "02",
@@ -55,7 +57,9 @@ const vedasData = [
         description: "Upanishad dedicated to Ganesha.",
         txtUrl: "assets/txts/ganapati-atharvashirsham.txt",
         hoverColor: "var(--bauhaus-red)",
-        tags: ["Ganesha", "Suktam", "Tuesday"]
+        tags: ["Ganesha", "Suktam", "Tuesday"],
+        bgSvg: "assets/svgs/ganesh-bg.svg",
+        iconSvg: "assets/svgs/ganesh-icon.svg"
     },
     {
         id: "08",
@@ -87,7 +91,9 @@ const vedasData = [
         description: "Prayers dedicated to Lord Rama.",
         txtUrl: "assets/txts/shri-rama-stotram.txt",
         hoverColor: "var(--bauhaus-yellow)",
-        tags: ["Rama", "Stotram", "Thursday"]
+        tags: ["Rama", "Stotram", "Thursday"],
+        bgSvg: "assets/svgs/vishnu-bg.svg",
+        iconSvg: "assets/svgs/vishnu-tilak-icon.svg"
     },
     {
         id: "12",

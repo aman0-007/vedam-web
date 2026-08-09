@@ -29,19 +29,25 @@ document.addEventListener('DOMContentLoaded', () => {
             card.dataset.txtUrl = veda.txtUrl;
             card.dataset.title = veda.title;
             
+            if (veda.bgSvg) {
+                card.dataset.bgSvg = veda.bgSvg;
+            }
+
             card.style.setProperty('--card-hover-color', veda.hoverColor);
             const bgShapeClass = backgroundShapes[index % backgroundShapes.length];
+
+            const iconHtml = veda.iconSvg ? `<img src="${veda.iconSvg}" class="card-icon" alt="Deity Icon">` : '';
 
             card.innerHTML = `
                 <div class="card-bg-geometry ${bgShapeClass}"></div>
                 <div class="hover-flood"></div>
                 
                 <div class="card-top">
-                    <div class="card-number">${veda.id}</div>
+                    ${iconHtml}
+                    <h3 class="card-title-top">${veda.title}</h3>
                 </div>
                 
                 <div class="card-bottom">
-                    <h3 class="card-title">${veda.title}</h3>
                     <p class="card-desc">${veda.description}</p>
                 </div>
             `;

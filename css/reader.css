@@ -112,6 +112,27 @@
     border: var(--border-thick) var(--border-color);
     padding: 3rem;
     box-shadow: 15px 15px 0px var(--border-color); /* Physical paper feel */
+    position: relative;
+    z-index: 1;
+}
+
+.paper-watermark {
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw; 
+    max-width: 450px;
+    height: 50vh; 
+    max-height: 450px;
+    
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    opacity: 0.1666;
+    pointer-events: none; 
+    z-index: 0; 
 }
 
 .reading-title {
@@ -121,6 +142,7 @@
     letter-spacing: 2px;
     margin-bottom: 1rem;
 }
+
 
 .title-divider {
     width: 100px;
@@ -138,6 +160,14 @@
     line-height: 1.6; 
     color: var(--text-color);
     transition: font-size 0.2s ease;
+}
+
+.reading-title, 
+.title-divider, 
+.reading-content,
+.card-title-top {
+    position: relative;
+    z-index: 1;
 }
 
 .reading-content center {

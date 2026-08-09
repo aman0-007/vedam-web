@@ -46,14 +46,14 @@ const vedasData = [
         title: "Bhagya Suktam",
         description: "Hymn for luck, wealth, and prosperity.",
         txtUrl: "assets/txts/bhagya-suktam.txt",
-        hoverColor: "var(--bauhaus-dark)",
+        hoverColor: "var(--bauhaus-cyan)",
         tags: ["Generic", "Suktam"]
     },
     {
         id: "07",
         title: "Ganpati Atharvashirsham",
         description: "Upanishad dedicated to Ganesha.",
-        txtUrl: "assets/txts/ganpati-atharvashirsham.txt",
+        txtUrl: "assets/txts/ganapati-atharvashirsham.txt",
         hoverColor: "var(--bauhaus-red)",
         tags: ["Ganesha", "Suktam", "Tuesday"]
     },
@@ -94,7 +94,7 @@ const vedasData = [
         title: "Shri Sharada Stotram",
         description: "Hymn to the Goddess of Knowledge.",
         txtUrl: "assets/txts/shri-sharada-stotram.txt",
-        hoverColor: "var(--text-color)",
+        hoverColor: "var(--bauhaus-cyan)",
         tags: ["Devi", "Stotram", "Wednesday"]
     }
 ];

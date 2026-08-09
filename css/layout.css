@@ -103,3 +103,20 @@
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 2rem; /* Tighter gap */
 }
+
+
+/* css/layout.css (Update the mobile media query at the bottom) */
+
+@media (max-width: 768px) {
+    .side-title {
+        /* Keep it visible, just scale it down slightly to fit the mobile edge */
+        font-size: 0.8rem;
+        left: 2%;
+    }
+    
+    .content-grid {
+        margin: 2rem auto 4rem auto;
+        /* Adds a 12% padding buffer on the left so cards don't hit the vertical text */
+        padding: 0 1rem 0 12%; 
+    }
+}

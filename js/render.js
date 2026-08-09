@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
             card.dataset.title = veda.title;
             
             card.style.setProperty('--card-hover-color', veda.hoverColor);
-
             const bgShapeClass = backgroundShapes[index % backgroundShapes.length];
 
             card.innerHTML = `

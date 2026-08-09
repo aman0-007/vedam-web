@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/reader.css">
     <link rel="stylesheet" href="css/reading-bg.css">
+    <link rel="stylesheet" href="css/filter.css">
 
 </head>
 
@@ -50,6 +51,19 @@
     <!-- Sideways title element characteristic of Bauhaus -->
     <div class="side-title">ANCIENT TEXTS / MODERN GRID</div>
 
+    <nav class="filter-bar" id="filter-bar">
+        <div class="filter-group">
+            <span class="filter-label">FILTER //</span>
+            <button class="filter-btn active" data-filter="All">ALL</button>
+            <button class="filter-btn" data-filter="Rudram">RUDRAM PATH</button>
+            <button class="filter-btn" data-filter="Suktam">SUKTAM</button>
+            <button class="filter-btn" data-filter="Stotram">STOTRAM</button>
+            <button class="filter-btn" data-filter="Shiva">SHIVA</button>
+            <button class="filter-btn" data-filter="Ganesha">GANESHA</button>
+            <button class="filter-btn" data-filter="Devi">DEVI</button>
+        </div>
+    </nav>
+    
     <main class="content-grid" id="text-grid">
         <!-- PDF Cards will be injected here by JS -->
     </main>

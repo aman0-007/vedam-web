@@ -91,6 +91,45 @@
     border-radius: 0 240px 240px 0; /* Curves the right side, flat on the left */
 }
 
+/* Shape 5: A massive Diamond anchored center-left */
+.bg-shape-5 {
+    width: 200px;
+    height: 200px;
+    top: 30%;
+    left: -50px;
+    transform: rotate(45deg);
+}
+
+/* Shape 6: A quarter-circle glued to the top-left ceiling */
+.bg-shape-6 {
+    width: 150px;
+    height: 150px;
+    top: 0;
+    left: 0;
+    border-radius: 0 0 150px 0;
+}
+
+/* Shape 7: Crossing diagonal architectural beams */
+.bg-shape-7 {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    background-image: 
+        linear-gradient(45deg, transparent 40%, var(--card-hover-color) 40%, var(--card-hover-color) 60%, transparent 60%),
+        linear-gradient(-45deg, transparent 40%, var(--card-hover-color) 40%, var(--card-hover-color) 60%, transparent 60%);
+    opacity: 0.1; /* Slightly lighter so it doesn't overwhelm text */
+}
+
+/* Shape 8: A heavy stark pillar taking up the right third */
+.bg-shape-8 {
+    width: 30%;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+
 /* --------------------------------------
    THE HOVER FLOOD (KEPT)
 ---------------------------------------*/

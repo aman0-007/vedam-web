@@ -1,0 +1,62 @@
+/* css/filter.css */
+
+.filter-bar {
+    max-width: 1100px;
+    margin: 2rem auto 2rem 15%; 
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-label {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-right: 1rem;
+    color: var(--text-color);
+}
+
+.filter-btn {
+    border: var(--border-thick) var(--border-color);
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform 0.1s;
+    box-shadow: 4px 4px 0px var(--border-color);
+}
+
+.filter-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--border-color);
+}
+
+/* ACTIVE STATE: Brutalist color inversion */
+.filter-btn.active {
+    background-color: var(--border-color);
+    color: var(--bg-color);
+    box-shadow: 0px 0px 0px var(--border-color);
+    transform: translate(4px, 4px);
+}
+
+@media (max-width: 768px) {
+    .filter-bar {
+        margin: 2rem auto;
+    }
+    .filter-btn {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.8rem;
+    }
+}

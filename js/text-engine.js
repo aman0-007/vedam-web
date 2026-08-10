@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // State Variables
     let currentFontSize = 1.2; 
-    let toolbarTimeout; // Tracks the inactivity timer
+    let toolbarTimeout; 
 
     const wakeUpToolbar = () => {
         toolbar.classList.add('active');
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- MODAL TRIGGER ---
+    // --- MODAL TRIGGER (OPEN TEXT) ---
     gridContainer.addEventListener('click', (e) => {
         const card = e.target.closest('.pdf-card');
         
@@ -65,8 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 watermarkBg.style.backgroundImage = 'none';
             }
 
+            // 1. Show the Modal
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden'; 
+            
+            // 2. INJECT FAKE PAGE INTO PHONE HISTORY
+            // This enables the physical back button to work!
+            history.pushState({ readerOpen: true }, "", "#reading");
             
             currentFontSize = 1.2;
             contentEl.style.fontSize = `${currentFontSize}rem`;
@@ -79,13 +84,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- CLOSE BUTTON TRIGGER ---
     btnClose.addEventListener('click', (e) => {
         e.stopPropagation();
-        modal.classList.add('hidden');
-        document.body.style.overflow = '';
-        setTimeout(() => { contentEl.innerHTML = ""; }, 200); 
+        // 3. Instead of closing manually, trigger the phone's "back" action.
+        // This will automatically fire the 'popstate' event below!
+        history.back(); 
     });
 
+    // 4. Listens for the physical back button OR our custom close button
+    window.addEventListener('popstate', (event) => {
+        if (!modal.classList.contains('hidden')) {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+            
+            if (document.activeElement) {
+                document.activeElement.blur();
+            }
+            gridContainer.style.pointerEvents = 'none';
+            setTimeout(() => { 
+                contentEl.innerHTML = ""; 
+                gridContainer.style.pointerEvents = '';
+            }, 200);
+        }
+    });
+
+    // --- FONT SIZE CONTROLS ---
     btnIncrease.addEventListener('click', () => {
         if (currentFontSize < 2.5) {
             currentFontSize += 0.2;

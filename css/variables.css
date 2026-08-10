@@ -4,12 +4,14 @@
     /* Classic Bauhaus */
     --bauhaus-red: #E03C31;
     --bauhaus-blue: #1F569D;
-    --bauhaus-yellow: #F2B705;
-    
-    /* NEW: Expanded Palette */
+    --bauhaus-yellow: #F2B705;    
     --bauhaus-orange: #E85D04;
     --bauhaus-green: #2B7A0B;
     --bauhaus-cyan: #00AEEF;
+    --bauhaus-purple: #6A1B9A;
+    --bauhaus-magenta: #D81159;
+    --bauhaus-teal: #006D77;
+    --bauhaus-lime: #A3C400;
 
     /* Typography */
     --font-main: 'Jost', sans-serif;

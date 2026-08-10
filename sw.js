@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'vedam-v7';
+const CACHE_NAME = 'vedam-v8';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -47,7 +47,24 @@ const ASSETS_TO_CACHE = [
     './assets/txts/durva-suktam.txt',
     './assets/txts/navagrahasuktam.txt',
     './assets/txts/shri-rama-stotram.txt',
-    './assets/txts/shri-sharada-stotram.txt'
+    './assets/txts/shri-sharada-stotram.txt',
+    './assets/txts/aditya-hridayam.txt',
+    './assets/txts/bhajagovindam.txt',
+    './assets/txts/bhu-suktam.txt',
+    './assets/txts/bilvashtakam.txt',
+    './assets/txts/kalabhairavashtakam.txt',
+    './assets/txts/lingashtakam.txt',
+    './assets/txts/mahishasura-mardini-stotram.txt',
+    './assets/txts/medha-suktam.txt',
+    './assets/txts/narayana-suktam.txt',
+    './assets/txts/nila-suktam.txt',
+    './assets/txts/purusha-suktam.txt',
+    './assets/txts/shiva-margabandhu-stotram.txt',
+    './assets/txts/shiva-panchakshara-stotram.txt',
+    './assets/txts/shiva-tandava-stotram.txt',
+    './assets/txts/sri-rudram-laghunyasam.txt',
+    './assets/txts/sri-shiv-rudrashtakam.txt',
+    './assets/txts/sri-suktam.txt'
 ];
 
 self.addEventListener('install', (event) => {

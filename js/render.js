@@ -16,16 +16,20 @@ const filterConfig = {
         ]
     },
     "GODS": {
-        broadMatch: ["Ganesha", "Shiva", "Devi", "Rama", "Navagraha"],
+        broadMatch: ["Ganesha", "Shiva", "Devi", "Vishnu", "Surya", "Rama", "Navagraha"],
         children: [
             { label: "GANESHA", value: "Ganesha" }, { label: "SHIVA", value: "Shiva" },
-            { label: "DEVI", value: "Devi" }, { label: "RAMA", value: "Rama" },
+            { label: "VISHNU", value: "Vishnu" }, { label: "DEVI", value: "Devi" },
+            { label: "SURYA", value: "Surya" }, { label: "RAMA", value: "Rama" },
             { label: "NAVAGRAHA", value: "Navagraha" }
         ]
     },
     "SUKTAM": {
         broadMatch: ["Suktam"],
         children: [
+            { label: "PURUSHA", value: "Purusha" }, { label: "SRI", value: "Sri" },
+            { label: "NARAYANA", value: "Narayana" }, { label: "MEDHA", value: "Medha" },
+            { label: "BHU", value: "Bhu" }, { label: "NILA", value: "Nila" },
             { label: "BHAGYA", value: "Bhagya" }, { label: "DURGA", value: "Durga" },
             { label: "DURVA", value: "Durva" }, { label: "NAVAGRAHA", value: "Navagraha" }
         ]
@@ -33,18 +37,24 @@ const filterConfig = {
     "STOTRAM": {
         broadMatch: ["Stotram"],
         children: [
-            { label: "RAMA", value: "Rama" }, { label: "SHARADA", value: "Sharada" }
+            { label: "ADITYA", value: "Aditya" }, { label: "BHAJA GOVINDAM", value: "Bhaja" },
+            { label: "MAHISHASURA", value: "Mahishasura" }, { label: "TANDAVA", value: "Tandava" },
+            { label: "LINGASHTAKAM", value: "Lingashtakam" }, { label: "BILVASHTAKAM", value: "Bilvashtakam" },
+            { label: "KALABHAIRAVA", value: "Kalabhairava" }, { label: "RAMA", value: "Rama" }, 
+            { label: "SHARADA", value: "Sharada" }
         ]
     },
     "PATH": {
         broadMatch: ["Rudram"],
         children: [
-            { label: "NAMAKAM", value: "Namakam" }, { label: "CHAMAKAM", value: "Chamakam" }
+            { label: "LAGHUNYASAM", value: "Laghunyasam" },
+            { label: "NAMAKAM", value: "Namakam" }, 
+            { label: "CHAMAKAM", value: "Chamakam" }
         ]
     },
     "PRARTHANA": {
         broadMatch: ["Prarthana"],
-        children: [] // Empty means Row 2 hides
+        children: []
     }
 };
 
@@ -53,7 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const primaryBtns = document.querySelectorAll('#primary-filters .filter-btn');
     const subFilterContainer = document.getElementById('sub-filters');
 
-    const backgroundShapes = ['bg-shape-1', 'bg-shape-2', 'bg-shape-3', 'bg-shape-4', 'bg-shape-5', 'bg-shape-6', 'bg-shape-7', 'bg-shape-8'];
+    const backgroundShapes = [
+        'bg-shape-1', 'bg-shape-2', 'bg-shape-3', 'bg-shape-4', 
+        'bg-shape-5', 'bg-shape-6', 'bg-shape-7', 'bg-shape-8',
+        'bg-shape-9', 'bg-shape-10', 'bg-shape-11', 'bg-shape-12',
+        'bg-shape-13', 'bg-shape-14', 'bg-shape-15', 'bg-shape-16'
+    ];
 
     // 1. Core Render Function
     window.renderCards = (filterArray = ['All'], searchQuery = '') => {

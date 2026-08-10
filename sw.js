@@ -1,7 +1,7 @@
 // sw.js
 
 // Version bumped to v2 to trigger the update on users' phones!
-const CACHE_NAME = 'vedam-v3';
+const CACHE_NAME = 'vedam-v4';
 
 // List of all files the app needs to work offline
 const ASSETS_TO_CACHE = [

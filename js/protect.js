@@ -87,4 +87,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         lastTouchEnd = now;
     }, { passive: false });
+
+    // 8. PWA Auto-Update Mechanism
+    if ('serviceWorker' in navigator) {
+        
+        // Register the service worker (if you haven't already done this somewhere else)
+        navigator.serviceWorker.register('./sw.js').then((registration) => {
+            console.log('Service Worker Registered');
+        });
+
+        // This listens for when the Service Worker takes over (activates)
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!refreshing) {
+                refreshing = true;
+                window.location.reload(); // Now it can safely reload the screen!
+            }
+        });
+    }
 });

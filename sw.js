@@ -1,9 +1,7 @@
 // sw.js
 
-// Version bumped to v2 to trigger the update on users' phones!
-const CACHE_NAME = 'vedam-v4';
+const CACHE_NAME = 'vedam-v5';
 
-// List of all files the app needs to work offline
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -26,7 +24,7 @@ const ASSETS_TO_CACHE = [
     './js/render.js',
     './js/text-engine.js',
     './js/protect.js',
-    './js/serach.js',
+    './js/search.js',
 
     // Brand Assets
     './assets/favicon.svg',
@@ -52,7 +50,6 @@ const ASSETS_TO_CACHE = [
     './assets/txts/shri-sharada-stotram.txt'
 ];
 
-// Step 1: Install & Download Cache
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
@@ -60,11 +57,9 @@ self.addEventListener('install', (event) => {
             return cache.addAll(ASSETS_TO_CACHE);
         })
     );
-    // Force the waiting service worker to become the active service worker.
     self.skipWaiting();
 });
 
-// Step 2: Clean up old versions (e.g., deleting v1 now that we are on v2)
 self.addEventListener('activate', (event) => {
     event.waitUntil(
         caches.keys().then((cacheNames) => {
@@ -81,11 +76,9 @@ self.addEventListener('activate', (event) => {
     self.clients.claim();
 });
 
-// Step 3: Intercept requests and serve from Cache first, then Network
 self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request).then((response) => {
-            // Return the cached file if we have it, otherwise fetch from the internet
             return response || fetch(event.request);
         })
     );

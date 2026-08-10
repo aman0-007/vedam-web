@@ -70,4 +70,21 @@ document.addEventListener('DOMContentLoaded', () => {
             // document.body.innerHTML = "Security Violation"; 
         }
     }, 1000);
+
+    // 6. Disable Pinch-to-Zoom (Multi-touch)
+    document.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 1) {
+            e.preventDefault(); // Blocks two-finger scrolling and zooming
+        }
+    }, { passive: false }); // { passive: false } is required for preventDefault to work on touch events
+
+    // 7. Disable Double-Tap-to-Zoom (Specifically for iOS)
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', (e) => {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            e.preventDefault(); // Blocks double taps
+        }
+        lastTouchEnd = now;
+    }, { passive: false });
 });

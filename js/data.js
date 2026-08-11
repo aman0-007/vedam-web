@@ -34,6 +34,8 @@ const vedasData = [
         title: "Shivopasana Mantra",
         description: "Mantras for the worship of Shiva.",
         txtUrl: "assets/txts/shivopasana-mantra.txt",
+        hiUrl: "assets/meanings/shivopasana-mantra-hi.txt",
+        enUrl: "assets/meanings/shivopasana-mantra-en.txt",
         hoverColor: "var(--bauhaus-yellow)",
         bgSvg: "assets/svgs/trishool-bg.svg",
         tags: ["Shiva", "Mantra", "Rudram", "Monday"]
@@ -206,6 +208,8 @@ const vedasData = [
         title: "Shiva Margabandhu Stotram",
         description: "Prayer to Lord Shiva for protection during journeys.",
         txtUrl: "assets/txts/shiva-margabandhu-stotram.txt",
+        hiUrl: "assets/meanings/shiva-margabandhu-stotram-hi.txt",
+        enUrl: "assets/meanings/shiva-margabandhu-stotram-en.txt",
         hoverColor: "var(--bauhaus-cyan)",
         bgSvg: "assets/svgs/tishool-bg.svg",
         tags: ["Shiva", "Stotram", "Monday"]

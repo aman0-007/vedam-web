@@ -97,9 +97,16 @@ document.addEventListener('DOMContentLoaded', () => {
             card.dataset.title = veda.title;
             if (veda.bgSvg) card.dataset.bgSvg = veda.bgSvg;
 
+            if (veda.hiUrl) card.dataset.hiUrl = veda.hiUrl;
+            if (veda.enUrl) card.dataset.enUrl = veda.enUrl;
+
             card.style.setProperty('--card-hover-color', veda.hoverColor);
             const bgShapeClass = backgroundShapes[index % backgroundShapes.length];
             const iconHtml = veda.iconSvg ? `<img src="${veda.iconSvg}" class="card-icon" alt="Deity Icon">` : '';
+
+            const badgeHtml = (veda.hiUrl || veda.enUrl) 
+                ? `<button class="meaning-badge" title="अर्थ पढ़ें (Read Meaning)" aria-label="अर्थ पढ़ें">[ अर्थ ]</button>`
+                : '';
 
             card.innerHTML = `
                 <div class="card-bg-geometry ${bgShapeClass}"></div>
@@ -110,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="card-bottom">
                     <p class="card-desc">${veda.description}</p>
+                    ${badgeHtml}
                 </div>
             `;
             gridContainer.appendChild(card);

@@ -17,6 +17,7 @@ const vedasData = [
         description: "Salutations to Rudra, the roaring storm.",
         txtUrl: "assets/txts/sri-rudram-namakam.txt",
         hoverColor: "var(--bauhaus-teal)",
+        bgSvg: "assets/svgs/adiyogi-bg.svg",
         tags: ["Shiva", "Suktam", "Rudram", "Monday"]
     },
     {
@@ -25,6 +26,7 @@ const vedasData = [
         description: "Fulfillment of desires through Rudra.",
         txtUrl: "assets/txts/sri-rudram-chamakam.txt",
         hoverColor: "var(--bauhaus-orange)",
+        bgSvg: "assets/svgs/adiyogi-bg.svg",
         tags: ["Shiva", "Suktam", "Rudram", "Monday"]
     },
     {
@@ -33,6 +35,7 @@ const vedasData = [
         description: "Mantras for the worship of Shiva.",
         txtUrl: "assets/txts/shivopasana-mantra.txt",
         hoverColor: "var(--bauhaus-yellow)",
+        bgSvg: "assets/svgs/trishool-bg.svg",
         tags: ["Shiva", "Mantra", "Rudram", "Monday"]
     },
     {
@@ -66,6 +69,8 @@ const vedasData = [
         title: "Durga Suktam",
         description: "Hymn to the protective Mother Goddess.",
         txtUrl: "assets/txts/durga-suktam.txt",
+        hiUrl: "assets/meanings/durga-suktam-hi.txt",
+        enUrl: "assets/meanings/durga-suktam-en.txt",
         hoverColor: "var(--bauhaus-magenta)",
         tags: ["Devi", "Suktam", "Friday"]
     },
@@ -74,6 +79,8 @@ const vedasData = [
         title: "Durva Suktam",
         description: "Chant highlighting the sacred Durva grass.",
         txtUrl: "assets/txts/durva-suktam.txt",
+        hiUrl: "assets/meanings/durva-suktam-hi.txt",
+        enUrl: "assets/meanings/durva-suktam-en.txt",
         hoverColor: "var(--bauhaus-green)",
         tags: ["Ganesha", "Suktam", "Wednesday"]
     },
@@ -117,6 +124,7 @@ const vedasData = [
         description: "Adi Shankaracharya's famous composition on devotion.",
         txtUrl: "assets/txts/bhajagovindam.txt",
         hoverColor: "var(--bauhaus-cyan)",
+        bgSvg: "assets/svgs/krishna-bg.svg",
         tags: ["Vishnu", "Stotram", "Thursday"]
     },
     {
@@ -173,6 +181,7 @@ const vedasData = [
         description: "Hymn dedicated to Lord Narayana, the supreme cosmic being.",
         txtUrl: "assets/txts/narayana-suktam.txt",
         hoverColor: "var(--bauhaus-blue)",
+        bgSvg: "assets/svgs/krishna-bg.svg",
         tags: ["Vishnu", "Suktam", "Thursday"]
     },
     {
@@ -189,6 +198,7 @@ const vedasData = [
         description: "Profound Vedic hymn describing the cosmic being.",
         txtUrl: "assets/txts/purusha-suktam.txt",
         hoverColor: "var(--bauhaus-orange)",
+        bgSvg: "assets/svgs/krishna-bg.svg",
         tags: ["Vishnu", "Suktam", "Thursday"] 
     },
     {
@@ -197,6 +207,7 @@ const vedasData = [
         description: "Prayer to Lord Shiva for protection during journeys.",
         txtUrl: "assets/txts/shiva-margabandhu-stotram.txt",
         hoverColor: "var(--bauhaus-cyan)",
+        bgSvg: "assets/svgs/tishool-bg.svg",
         tags: ["Shiva", "Stotram", "Monday"]
     },
     {
@@ -205,6 +216,7 @@ const vedasData = [
         description: "Verses glorifying the five-syllable mantra 'Om Namah Shivaya'.",
         txtUrl: "assets/txts/shiva-panchakshara-stotram.txt",
         hoverColor: "var(--bauhaus-lime)",
+        bgSvg: "assets/svgs/trishool-bg.svg",
         tags: ["Shiva", "Stotram", "Monday"]
     },
     {
@@ -213,6 +225,7 @@ const vedasData = [
         description: "Ravana's powerful composition praising Shiva's cosmic dance.",
         txtUrl: "assets/txts/shiva-tandava-stotram.txt",
         hoverColor: "var(--bauhaus-red)",
+        bgSvg: "assets/svgs/adiyogi-bg.svg",
         tags: ["Shiva", "Stotram", "Monday"]
     },
     {
@@ -221,6 +234,7 @@ const vedasData = [
         description: "Preparatory purifying mantras chanted before Sri Rudram.",
         txtUrl: "assets/txts/sri-rudram-laghunyasam.txt",
         hoverColor: "var(--bauhaus-purple)",
+        bgSvg: "assets/svgs/adiyogi-bg.svg",
         tags: ["Shiva", "Rudram", "Monday"]
     },
     {
@@ -229,6 +243,7 @@ const vedasData = [
         description: "Goswami Tulsidas's beautiful eight-verse hymn to Lord Shiva.",
         txtUrl: "assets/txts/sri-shiv-rudrashtakam.txt",
         hoverColor: "var(--bauhaus-blue)",
+        bgSvg: "assets/svgs/trishool-bg.svg",
         tags: ["Shiva", "Stotram", "Monday"]
     },
     {

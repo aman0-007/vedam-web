@@ -1,0 +1,265 @@
+/* css/meanings.css */
+
+/* ====================================================
+   1. BRUTALIST CARD BADGE [ अर्थ ] (BOTTOM RIGHT)
+==================================================== */
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.75rem;
+    position: relative;
+    width: 100%;
+    z-index: 5; /* Keeps badge above background geometry */
+}
+
+.card-desc {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.meaning-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.65rem;
+    
+    font-family: 'Noto Serif Devanagari', var(--font-main);
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1;
+    
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border: var(--border-thin) var(--border-color);
+    border-radius: var(--radius-none, 0px);
+    box-shadow: 3px 3px 0px var(--border-color);
+    
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: auto;
+    
+    position: relative;
+    z-index: 10;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color var(--transition-speed);
+}
+
+/* Mechanical hover & active press states */
+.meaning-badge:hover {
+    background-color: var(--bauhaus-red);
+    color: #fff;
+    border-color: #111111;
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--border-color);
+}
+
+.meaning-badge:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--border-color);
+}
+
+/* Force readable text on card hover flood */
+.pdf-card:hover .meaning-badge {
+    border-color: #111111;
+    box-shadow: 3px 3px 0px #111111;
+}
+
+/* ====================================================
+   2. MINIMAL BRUTALIST TOGGLE (TEXT INSIDE TRACK: हिं / E)
+==================================================== */
+.text-column {
+    position: relative;
+}
+
+.lang-switch-toggle {
+    position: absolute;
+    top: 1.6rem;
+    right: 4rem;
+    margin: 0;
+    z-index: 30;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.lang-switch-toggle.hidden {
+    display: none !important;
+}
+
+/* FIXED: Moved down on mobile so it never overlaps the ✕ close button */
+@media (max-width: 768px) {
+    .lang-switch-toggle {
+        right: 1.4rem;
+    }
+}
+
+/* Guarantee the close button is always clickable above all content */
+#close-reader,
+.bauhaus-close {
+    z-index: 100 !important;
+}
+
+/* Compact 52px × 24px Track */
+.lang-track {
+    width: 52px;
+    height: 24px;
+    border: var(--border-thin) var(--border-color);
+    background-color: var(--bg-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 2px 0px var(--border-color);
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    user-select: none;
+}
+
+.lang-text {
+    width: 26px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif Devanagari', var(--font-main);
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1;
+    z-index: 5;
+    transition: color 0.25s ease;
+}
+
+.lang-hi {
+    color: #ffffff;
+}
+
+.lang-en {
+    color: var(--text-color);
+}
+
+.lang-block {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 26px;
+    height: 24px;
+    background-color: var(--bauhaus-red);
+    border: var(--border-thin) var(--border-color);
+    transition: transform 0.25s cubic-bezier(0.77, 0, 0.175, 1), background-color 0.25s;
+    z-index: 2;
+}
+
+.lang-switch-toggle.en-active .lang-block {
+    transform: translateX(26px);
+    background-color: var(--bauhaus-blue);
+}
+
+.lang-switch-toggle.en-active .lang-hi {
+    color: var(--text-color);
+}
+
+.lang-switch-toggle.en-active .lang-en {
+    color: #ffffff;
+}
+
+body.dark-theme .lang-switch-toggle.en-active .lang-block {
+    background-color: var(--bauhaus-yellow);
+}
+
+body.dark-theme .lang-switch-toggle.en-active .lang-en {
+    color: #111111;
+}
+
+.lang-switch-toggle:active .lang-track {
+    box-shadow: 0px 0px 0px var(--border-color);
+    transform: translate(2px, 2px);
+}
+
+/* ====================================================
+   3. ARCHITECTURAL TYPOGRAPHY & SMOOTH TRANSITION
+==================================================== */
+#text-content {
+    transition: opacity 0.18s ease-in-out; /* Buttery smooth text fade */
+}
+
+.formatted-meaning {
+    position: relative;
+    padding-top: 1.25rem;
+    font-family: 'Noto Serif Devanagari', var(--font-main);
+    color: var(--text-color);
+    line-height: 1.45;
+    font-size: calc(0.98em / 1.2);
+}
+
+/* H2 - Main Title */
+.formatted-meaning h2 {
+    font-size: 1.6em;
+    font-weight: 800;
+    margin: 0.25rem 0 0.1rem 0;
+    padding: 0.4rem 0 0.4rem 0.75rem;
+    border-left: 6px solid var(--bauhaus-red);
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* H3 - Section Titles */
+.formatted-meaning h3 {
+    font-size: 1.1em;
+    font-weight: 800;
+    color: var(--bauhaus-red);
+    margin: 1rem 0 0.15rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+body.dark-theme .formatted-meaning h3 {
+    color: var(--bauhaus-yellow);
+}
+
+/* H4 - Mantra Banners (#### ॥ मन्त्र १ ॥) */
+.formatted-meaning h4 {
+    display: inline-block;
+    font-size: 0.95em;
+    font-weight: 800;
+    color: var(--bg-color);
+    background-color: var(--text-color);
+    padding: 0.2rem 0.6rem;
+    margin: 0.8rem 0 0.15rem 0;
+    border-radius: 2px;
+}
+
+/* Bold Labels (शब्दार्थ:, भावार्थ:) */
+.formatted-meaning strong {
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+/* Tightened Horizontal Divider (---) */
+.formatted-meaning hr {
+    border: none;
+    border-top: var(--border-thin) var(--border-color);
+    margin: 0.75rem 0;
+    opacity: 0.3;
+}
+
+/* COMPACT BULLET LISTS */
+.formatted-meaning ul {
+    margin: 0.15rem 0 0.25rem 1.25rem;
+    list-style-type: square;
+}
+
+.formatted-meaning li {
+    margin-bottom: -0.90rem;
+    line-height: 1.35;
+}
+
+/* Paragraph spacing */
+.formatted-meaning p,
+.formatted-meaning div {
+    margin-bottom: 0.35rem;
+}
+
+#text-content {
+    /* FIX: Added font-size to the transition for smooth zooming */
+    transition: opacity 0.18s ease-in-out, font-size 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}

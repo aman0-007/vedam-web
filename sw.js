@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'vedam-v8';
+const CACHE_NAME = 'vedam-v9';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -17,6 +17,7 @@ const ASSETS_TO_CACHE = [
     './css/reading-bg.css',
     './css/filter.css',
     './css/search.css',
+    './css/meanings.css',
 
     // JavaScript
     './js/data.js',
@@ -34,6 +35,9 @@ const ASSETS_TO_CACHE = [
     './assets/svgs/ganesh-icon.svg',
     './assets/svgs/vishnu-bg.svg',
     './assets/svgs/vishnu-tilak-icon.svg',
+    './assets/svgs/krishna-bg.svg',
+    './assets/svgs/trishool-bg.svg',
+    './assets/svgs/adiyogi-bg.svg',
 
     // Text Files
     './assets/txts/ganapati-prarthana.txt',
@@ -64,7 +68,13 @@ const ASSETS_TO_CACHE = [
     './assets/txts/shiva-tandava-stotram.txt',
     './assets/txts/sri-rudram-laghunyasam.txt',
     './assets/txts/sri-shiv-rudrashtakam.txt',
-    './assets/txts/sri-suktam.txt'
+    './assets/txts/sri-suktam.txt',
+
+    // Meaning Files
+    './assets/meanings/durga-suktam-hi.txt',
+    './assets/meanings/durga-suktam-en.txt',
+    './assets/meanings/durva-suktam-hi.txt',
+    './assets/meanings/durva-suktam-en.txt',
 ];
 
 self.addEventListener('install', (event) => {

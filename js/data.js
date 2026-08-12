@@ -27,7 +27,7 @@ const vedasData = [
         title: "Sri Rudram Chamakam",
         description: "Fulfillment of desires through Rudra.",
         txtUrl: "assets/txts/sri-rudram-chamakam.txt",
-        hoverColor: "var(--bauhaus-amber)",
+        hoverColor: "var(--bauhaus-cobalt)",
         bgSvg: "assets/svgs/adiyogi-bg.svg",
         tags: ["Shiva", "Suktam", "Rudram", "Monday"]
     },
@@ -180,7 +180,7 @@ const vedasData = [
         title: "Medha Suktam",
         description: "Vedic prayer for intellect, memory, and divine wisdom.",
         txtUrl: "assets/txts/medha-suktam.txt",
-        hoverColor: "var(--bauhaus-amber)",
+        hoverColor: "var(--bauhaus-cobalt)",
         tags: ["Devi", "Suktam", "Wednesday"]
     },
     {

@@ -69,6 +69,7 @@ const ASSETS_TO_CACHE = [
     './assets/txts/sri-rudram-laghunyasam.txt',
     './assets/txts/sri-shiv-rudrashtakam.txt',
     './assets/txts/sri-suktam.txt',
+    './assets/txts/kshama-prarthana.txt',
 
     // Meaning Files
     './assets/meanings/durga-suktam-hi.txt',
@@ -78,7 +79,17 @@ const ASSETS_TO_CACHE = [
     './assets/meanings/shiva-margabandhu-stotram-hi.txt',
     './assets/meanings/shiva-margabandhu-stotram-en.txt',
     './assets/meanings/shivopasana-mantra-hi.txt',
-    './assets/meanings/shivopasana-mantra-en.txt'
+    './assets/meanings/shivopasana-mantra-en.txt',
+    './assets/meanings/ganapati-prarthana-hi.txt',
+    './assets/meanings/ganapati-prarthana-en.txt',
+    './assets/meanings/kshama-prarthana-hi.txt',
+    './assets/meanings/kshama-prarthana-en.txt',
+    './assets/meanings/shiva-panchakshara-stotram-hi.txt',
+    './assets/meanings/shiva-panchakshara-stotram-en.txt',
+    './assets/meanings/shri-sharada-stotram-hi.txt',
+    './assets/meanings/shri-sharada-stotram-en.txt',
+    './assets/meanings/shri-rama-stotram-hi.txt',
+    './assets/meanings/shri-rama-stotram-en.txt'
 ];
 
 self.addEventListener('install', (event) => {

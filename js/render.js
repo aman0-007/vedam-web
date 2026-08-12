@@ -41,7 +41,11 @@ const filterConfig = {
             { label: "MAHISHASURA", value: "Mahishasura" }, { label: "TANDAVA", value: "Tandava" },
             { label: "LINGASHTAKAM", value: "Lingashtakam" }, { label: "BILVASHTAKAM", value: "Bilvashtakam" },
             { label: "KALABHAIRAVA", value: "Kalabhairava" }, { label: "RAMA", value: "Rama" }, 
-            { label: "SHARADA", value: "Sharada" }
+            { label: "SHARADA", value: "Sharada" },
+            /* --- NEWLY ADDED STOTRAMS --- */
+            { label: "MARGABANDHU", value: "Margabandhu" }, 
+            { label: "PANCHAKSHARA", value: "Panchakshara" }, 
+            { label: "RUDRASHTAKAM", value: "Rudrashtakam" }
         ]
     },
     "PATH": {
@@ -54,7 +58,11 @@ const filterConfig = {
     },
     "PRARTHANA": {
         broadMatch: ["Prarthana"],
-        children: []
+        /* --- NEWLY ADDED PRARTHANA BUTTONS --- */
+        children: [
+            { label: "GANAPATI", value: "Ganapati Prarthana" },
+            { label: "KSHAMA", value: "Kshama" }
+        ]
     }
 };
 
@@ -67,7 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'bg-shape-1', 'bg-shape-2', 'bg-shape-3', 'bg-shape-4', 
         'bg-shape-5', 'bg-shape-6', 'bg-shape-7', 'bg-shape-8',
         'bg-shape-9', 'bg-shape-10', 'bg-shape-11', 'bg-shape-12',
-        'bg-shape-13', 'bg-shape-14', 'bg-shape-15', 'bg-shape-16'
+        'bg-shape-13', 'bg-shape-14', 'bg-shape-15', 'bg-shape-16',
+        'bg-shape-17', 'bg-shape-18', 'bg-shape-19', 'bg-shape-20',
+        'bg-shape-21', 'bg-shape-22', 'bg-shape-23', 'bg-shape-24'
     ];
 
     // 1. Core Render Function

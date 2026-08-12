@@ -211,6 +211,98 @@
     clip-path: polygon(35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0% 65%, 0% 35%, 35% 35%);
 }
 
+/* Shape 17: Concentric Bauhaus Target / Bullseye (Top Right) */
+.bg-shape-17 {
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    right: -50px;
+    border-radius: 50%;
+    background-color: transparent;
+    background: radial-gradient(circle, var(--card-hover-color) 20%, transparent 20%, transparent 40%, var(--card-hover-color) 40%, var(--card-hover-color) 60%, transparent 60%, transparent 80%, var(--card-hover-color) 80%);
+}
+
+/* Shape 18: Constructivist Stepped Ziggurat (Bottom Center) */
+.bg-shape-18 {
+    width: 160px;
+    height: 120px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: polygon(20% 100%, 20% 66%, 40% 66%, 40% 33%, 60% 33%, 60% 66%, 80% 66%, 80% 100%);
+}
+
+/* Shape 19: Architectural Checkerboard Grid (Full span, subtle) */
+.bg-shape-19 {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    background-image: 
+      linear-gradient(45deg, var(--card-hover-color) 25%, transparent 25%, transparent 75%, var(--card-hover-color) 75%, var(--card-hover-color)),
+      linear-gradient(45deg, var(--card-hover-color) 25%, transparent 25%, transparent 75%, var(--card-hover-color) 75%, var(--card-hover-color));
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    opacity: 0.08; /* Slightly lighter due to density */
+}
+
+/* Shape 20: Massive Rising Semi-Circle (Bottom Center) */
+.bg-shape-20 {
+    width: 240px;
+    height: 120px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 240px 240px 0 0;
+}
+
+/* Shape 21: Industrial Speed Lines (Vertical slice) */
+.bg-shape-21 {
+    width: 120px;
+    height: 100%;
+    top: 0;
+    left: 15%;
+    background-color: transparent;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 15px,
+        var(--card-hover-color) 15px,
+        var(--card-hover-color) 30px
+    );
+}
+
+/* Shape 22: Hollow Bauhaus Window Arch (Bottom Right) */
+.bg-shape-22 {
+    width: 140px;
+    height: 180px;
+    bottom: 0;
+    right: 20px;
+    border-radius: 70px 70px 0 0;
+    background-color: transparent;
+    border: 35px solid var(--card-hover-color);
+    border-bottom: none;
+}
+
+/* Shape 23: Pure Geometric Hexagon (Center Right edge) */
+.bg-shape-23 {
+    width: 180px;
+    height: 180px;
+    top: 20%;
+    right: -40px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* Shape 24: Heavy Structural L-Beam (Top Left) */
+.bg-shape-24 {
+    width: 160px;
+    height: 160px;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 0, 35% 0, 35% 65%, 100% 65%, 100% 100%, 0 100%);
+}
+
 /* --------------------------------------
    THE HOVER FLOOD (KEPT)
 ---------------------------------------*/

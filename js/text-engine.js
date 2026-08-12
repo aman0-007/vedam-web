@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         titleEl.textContent = card.dataset.title;
         
-        const randomBg = Math.floor(Math.random() * 3) + 1;
+        const randomBg = Math.floor(Math.random() * 6) + 1;
         readerBg.className = `reading-bg bauhaus-bg-${randomBg}`;
         readerBg.style.backgroundImage = '';
 

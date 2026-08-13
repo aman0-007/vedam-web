@@ -54,59 +54,85 @@
     opacity: 0;
 }
 
-/* Shape 1: Giant Circle bleeding off the top right */
+/* Shape 1: Split-Tension Circle (Half solid, half industrial stripes) */
 .bg-shape-1 {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
+    top: -40px;
+    right: -40px;
     border-radius: 50%;
-    top: -80px;
-    right: -80px;
+    background-color: transparent;
+    background-image: 
+        linear-gradient(90deg, var(--card-hover-color) 50%, transparent 50%),
+        repeating-linear-gradient(0deg, var(--card-hover-color) 0, var(--card-hover-color) 10px, transparent 10px, transparent 20px);
 }
 
-/* Shape 2: Heavy Angled Slab cutting across the bottom left */
+/* Shape 2: Heavy Constructivist L-Bracket */
 .bg-shape-2 {
-    width: 300px;
-    height: 140px;
-    bottom: 10px;
-    left: -60px;
-    transform: rotate(-35deg);
+    width: 220px;
+    height: 180px;
+    bottom: 20px;
+    left: -20px;
+    background-color: var(--card-hover-color);
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 35% 35%, 35% 100%, 0 100%);
 }
 
-/* Shape 3: Strict Right-Angled Triangle anchored to bottom right */
+/* Shape 3: Kinetic Sliced Triangle */
 .bg-shape-3 {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     bottom: 0;
     right: 0;
-    /* Uses CSS clip-path to slice the square into a sharp triangle */
+    background-color: transparent;
+    background-image: repeating-linear-gradient(
+        -45deg, 
+        var(--card-hover-color) 0, 
+        var(--card-hover-color) 20px, 
+        transparent 20px, 
+        transparent 40px
+    );
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
 }
 
-/* Shape 4: Perfect Half-Circle mounted flush against the left wall */
+/* Shape 4: Bauhaus Archway with Structural Crossbar */
 .bg-shape-4 {
-    width: 120px;
+    width: 140px;
     height: 240px;
     top: 20px;
     left: 0;
-    border-radius: 0 240px 240px 0; /* Curves the right side, flat on the left */
+    background-image: linear-gradient(to bottom, transparent 45%, var(--card-hover-color) 45%, var(--card-hover-color) 55%, transparent 55%);
+    border: 30px solid var(--card-hover-color);
+    border-left: none;
+    border-radius: 0 240px 240px 0;
 }
 
-/* Shape 5: A massive Diamond anchored center-left */
+/* Shape 5: Split-Tone Isometric Diamond */
 .bg-shape-5 {
-    width: 200px;
-    height: 200px;
-    top: 30%;
+    width: 180px;
+    height: 180px;
+    top: 25%;
     left: -50px;
     transform: rotate(45deg);
+    border: 25px solid var(--card-hover-color);
+    background-image: linear-gradient(135deg, var(--card-hover-color) 50%, transparent 50%);
 }
 
-/* Shape 6: A quarter-circle glued to the top-left ceiling */
+/* Shape 6: Expanding Corner Radar / Quarter-Rings */
 .bg-shape-6 {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     top: 0;
     left: 0;
-    border-radius: 0 0 150px 0;
+    border-radius: 0 0 180px 0;
+    background-color: transparent;
+    background-image: radial-gradient(
+        circle at 0 0, 
+        var(--card-hover-color) 20%, 
+        transparent 20.5%, transparent 40%, 
+        var(--card-hover-color) 40.5%, var(--card-hover-color) 60%, 
+        transparent 60.5%, transparent 80%, 
+        var(--card-hover-color) 80.5%
+    );
 }
 
 /* Shape 7: Crossing diagonal architectural beams */
@@ -301,6 +327,59 @@
     top: 0;
     left: 0;
     clip-path: polygon(0 0, 35% 0, 35% 65%, 100% 65%, 100% 100%, 0 100%);
+}
+
+/* Shape 25: Alternating Quadrant Circle (Classic Bauhaus Graphic) */
+.bg-shape-25 {
+    width: 180px;
+    height: 180px;
+    bottom: 20px;
+    left: -20px;
+    border-radius: 50%;
+    background-image: conic-gradient(
+        from 90deg, 
+        var(--card-hover-color) 90deg, 
+        transparent 90deg, transparent 180deg, 
+        var(--card-hover-color) 180deg, var(--card-hover-color) 270deg, 
+        transparent 270deg
+    );
+}
+
+/* Shape 26: Floating Isometric Ziggurat / Staircase */
+.bg-shape-26 {
+    width: 160px;
+    height: 160px;
+    top: -30px;
+    left: 45%;
+    transform: rotate(45deg);
+    background-color: var(--card-hover-color);
+    clip-path: polygon(0 0, 100% 0, 100% 25%, 75% 25%, 75% 50%, 50% 50%, 50% 75%, 25% 75%, 25% 100%, 0 100%);
+}
+
+/* Shape 27: Asymmetric Typographic Bars */
+.bg-shape-27 {
+    width: 160px;
+    height: 130px;
+    bottom: 30px;
+    right: 0;
+    background-image: 
+        linear-gradient(var(--card-hover-color), var(--card-hover-color)),
+        linear-gradient(var(--card-hover-color), var(--card-hover-color)),
+        linear-gradient(var(--card-hover-color), var(--card-hover-color));
+    background-size: 100% 30px, 60% 30px, 85% 30px;
+    background-position: 0 0, 100% 50px, 0 100px;
+    background-repeat: no-repeat;
+}
+
+/* Shape 28: Massive Industrial Hairpin / U-Curve */
+.bg-shape-28 {
+    width: 130px;
+    height: 180px;
+    top: 0;
+    right: 40px;
+    border: 35px solid var(--card-hover-color);
+    border-top: none;
+    border-radius: 0 0 100px 100px;
 }
 
 /* --------------------------------------

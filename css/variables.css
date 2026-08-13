@@ -3,7 +3,7 @@
 :root {
     /* Classic Bauhaus */
     --bauhaus-red: #E03C31;
-    --bauhaus-blue: #1F569D;
+    --bauhaus-blue: #005CFF;
     --bauhaus-yellow: #F2B705;    
     --bauhaus-orange: #E85D04;
     --bauhaus-green: #2B7A0B;
@@ -12,12 +12,20 @@
     --bauhaus-magenta: #D81159;
     --bauhaus-teal: #006D77;
     --bauhaus-lime: #A3C400;
+    
+    /* Extended Bauhaus / Constructivist */
     --bauhaus-coral: #FF5252;
     --bauhaus-indigo: #3949AB;
-    --bauhaus-cobalt: #0047AB;
     --bauhaus-olive: #AFB42B;
     --bauhaus-pink: #E91E63;
     --bauhaus-mint: #00BFA5;
+
+    /* NEW: Striking Architectural Colors */
+    --bauhaus-mustard: #E1A100; /* Deep, vintage industrial yellow */
+    --bauhaus-rust: #C34A2C;    /* Earthy oxidized iron/terracotta */
+    --bauhaus-slate: #546E7A;   /* Cool structural steel blue-gray */
+    --bauhaus-violet: #651FFF;  /* Sharp, electric geometric purple */
+    --bauhaus-crimson: #BA1126; /* Deep, bold Soviet-poster red */
 
     /* Typography */
     --font-main: 'Jost', sans-serif;
@@ -38,9 +46,9 @@
 }
 
 body.dark-theme {
-    --bg-color: #111111;
-    --text-color: #F4F4F0;
-    --border-color: #F4F4F0;
-    --shadow-solid: 6px 6px 0px var(--border-color);
-    --shadow-hover: 10px 10px 0px var(--border-color);
+    --bg-color: #1A1A1A;     
+    --text-color: #E2E2DF; 
+    --border-color: #D1D1CD; 
+    --shadow-solid: 6px 6px 0px #000000;
+    --shadow-hover: 10px 10px 0px #000000;
 }

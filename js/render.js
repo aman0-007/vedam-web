@@ -71,14 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const primaryBtns = document.querySelectorAll('#primary-filters .filter-btn');
     const subFilterContainer = document.getElementById('sub-filters');
 
-    const backgroundShapes = [
-        'bg-shape-1', 'bg-shape-2', 'bg-shape-3', 'bg-shape-4', 
-        'bg-shape-5', 'bg-shape-6', 'bg-shape-7', 'bg-shape-8',
-        'bg-shape-9', 'bg-shape-10', 'bg-shape-11', 'bg-shape-12',
-        'bg-shape-13', 'bg-shape-14', 'bg-shape-15', 'bg-shape-16',
-        'bg-shape-17', 'bg-shape-18', 'bg-shape-19', 'bg-shape-20',
-        'bg-shape-21', 'bg-shape-22', 'bg-shape-23', 'bg-shape-24'
-    ];
+    // const backgroundShapes = [
+    //     'bg-shape-1', 'bg-shape-2', 'bg-shape-3', 'bg-shape-4', 
+    //     'bg-shape-5', 'bg-shape-6', 'bg-shape-7', 'bg-shape-8',
+    //     'bg-shape-9', 'bg-shape-10', 'bg-shape-11', 'bg-shape-12',
+    //     'bg-shape-13', 'bg-shape-14', 'bg-shape-15', 'bg-shape-16',
+    //     'bg-shape-17', 'bg-shape-18', 'bg-shape-19', 'bg-shape-20',
+    //     'bg-shape-21', 'bg-shape-22', 'bg-shape-23', 'bg-shape-24',
+    //     'bg-shape-25', 'bg-shape-26', 'bg-shape-27', 'bg-shape-28'
+    // ];
 
     // 1. Core Render Function
     window.renderCards = (filterArray = ['All'], searchQuery = '') => {
@@ -111,7 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (veda.enUrl) card.dataset.enUrl = veda.enUrl;
 
             card.style.setProperty('--card-hover-color', veda.hoverColor);
-            const bgShapeClass = backgroundShapes[index % backgroundShapes.length];
+            // const bgShapeClass = backgroundShapes[index % backgroundShapes.length];
+            const bgShapeClass = veda.cardShape || 'bg-shape-1';
             const iconHtml = veda.iconSvg ? `<img src="${veda.iconSvg}" class="card-icon" alt="Deity Icon">` : '';
 
             const badgeHtml = (veda.hiUrl || veda.enUrl) 

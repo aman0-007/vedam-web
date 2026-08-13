@@ -9,6 +9,7 @@ const vedasData = [
         hiUrl: "assets/meanings/ganapati-prarthana-hi.txt",
         enUrl: "assets/meanings/ganapati-prarthana-en.txt",
         hoverColor: "var(--bauhaus-coral)",
+        cardShape: "bg-shape-17", // Target/Bullseye for the starting prayer
         tags: ["Ganesha", "Prarthana", "Rudram"],
         bgSvg: "assets/svgs/ganesh-bg.svg",
         iconSvg: "assets/svgs/ganesh-icon.svg"
@@ -18,8 +19,9 @@ const vedasData = [
         title: "Sri Rudram Namakam",
         description: "Salutations to Rudra, the roaring storm.",
         txtUrl: "assets/txts/sri-rudram-namakam.txt",
-        hoverColor: "var(--bauhaus-teal)",
-        bgSvg: "assets/svgs/rudra-bg.svg",
+        hoverColor: "var(--bauhaus-slate)", // Ash / Bhasma
+        cardShape: "bg-shape-21", // Speed lines for the roaring storm
+        bgSvg: "assets/svgs/adiyogi-bg.svg",
         tags: ["Shiva", "Suktam", "Rudram", "Monday"]
     },
     {
@@ -27,8 +29,9 @@ const vedasData = [
         title: "Sri Rudram Chamakam",
         description: "Fulfillment of desires through Rudra.",
         txtUrl: "assets/txts/sri-rudram-chamakam.txt",
-        hoverColor: "var(--bauhaus-cobalt)",
-        bgSvg: "assets/svgs/rudra-bg.svg",
+        hoverColor: "var(--bauhaus-rust)", // Earthy / Rudraksha
+        cardShape: "bg-shape-18", // Stepped Ziggurat (building desires)
+        bgSvg: "assets/svgs/adiyogi-bg.svg",
         tags: ["Shiva", "Suktam", "Rudram", "Monday"]
     },
     {
@@ -38,7 +41,8 @@ const vedasData = [
         txtUrl: "assets/txts/shivopasana-mantra.txt",
         hiUrl: "assets/meanings/shivopasana-mantra-hi.txt",
         enUrl: "assets/meanings/shivopasana-mantra-en.txt",
-        hoverColor: "var(--bauhaus-yellow)",
+        hoverColor: "var(--bauhaus-indigo)", // Deep meditation
+        cardShape: "bg-shape-28", // Heavy U-Curve
         bgSvg: "assets/svgs/trishool-bg.svg",
         tags: ["Shiva", "Mantra", "Rudram", "Monday"]
     },
@@ -47,7 +51,8 @@ const vedasData = [
         title: "Mantra Pushpam",
         description: "The flower of Vedic chants.",
         txtUrl: "assets/txts/mantra-pushpam.txt",
-        hoverColor: "var(--bauhaus-pink)",
+        hoverColor: "var(--bauhaus-pink)", // Lotus/Flowers
+        cardShape: "bg-shape-25", // Alternating quadrant petals
         tags: ["Generic", "Mantra", "Rudram"]
     },
     {
@@ -55,7 +60,8 @@ const vedasData = [
         title: "Bhagya Suktam",
         description: "Hymn for luck, wealth, and prosperity.",
         txtUrl: "assets/txts/bhagya-suktam.txt",
-        hoverColor: "var(--bauhaus-green)",
+        hoverColor: "var(--bauhaus-mustard)", // Golden wealth
+        cardShape: "bg-shape-20", // Rising semi-circle (growth)
         tags: ["Surya", "Suktam", "Sunday"]
     },
     {
@@ -63,7 +69,8 @@ const vedasData = [
         title: "Ganpati Atharvashirsham",
         description: "Upanishad dedicated to Ganesha.",
         txtUrl: "assets/txts/ganapati-atharvashirsham.txt",
-        hoverColor: "var(--bauhaus-indigo)",
+        hoverColor: "var(--bauhaus-red)", // Sindoor
+        cardShape: "bg-shape-23", // Hexagon (intellect/structure)
         tags: ["Ganesha", "Suktam", "Tuesday"],
         bgSvg: "assets/svgs/ganesh-bg.svg",
         iconSvg: "assets/svgs/ganesh-icon.svg"
@@ -75,7 +82,8 @@ const vedasData = [
         txtUrl: "assets/txts/durga-suktam.txt",
         hiUrl: "assets/meanings/durga-suktam-hi.txt",
         enUrl: "assets/meanings/durga-suktam-en.txt",
-        hoverColor: "var(--bauhaus-red)",
+        hoverColor: "var(--bauhaus-crimson)", // Fierce Red
+        cardShape: "bg-shape-15", // Sharp inward chevron
         tags: ["Devi", "Suktam", "Friday"]
     },
     {
@@ -85,7 +93,8 @@ const vedasData = [
         txtUrl: "assets/txts/durva-suktam.txt",
         hiUrl: "assets/meanings/durva-suktam-hi.txt",
         enUrl: "assets/meanings/durva-suktam-en.txt",
-        hoverColor: "var(--bauhaus-olive)",
+        hoverColor: "var(--bauhaus-olive)", // Grass green
+        cardShape: "bg-shape-13", // Grounded corner circle
         tags: ["Ganesha", "Suktam", "Wednesday"]
     },
     {
@@ -93,7 +102,8 @@ const vedasData = [
         title: "Navagraha Suktam",
         description: "Hymn to the nine planetary deities.",
         txtUrl: "assets/txts/navagrahasuktam.txt",
-        hoverColor: "var(--bauhaus-purple)",
+        hoverColor: "var(--bauhaus-violet)", // Cosmos/Space
+        cardShape: "bg-shape-9", // Floating hollow orbit ring
         tags: ["Navagraha", "Suktam", "Saturday"]
     },
     {
@@ -104,6 +114,7 @@ const vedasData = [
         hiUrl: "assets/meanings/shri-rama-stotram-hi.txt",
         enUrl: "assets/meanings/shri-rama-stotram-en.txt",
         hoverColor: "var(--bauhaus-blue)",
+        cardShape: "bg-shape-27", // Typographic bars (Order/Dharma)
         tags: ["Rama", "Stotram", "Thursday"],
         bgSvg: "assets/svgs/vishnu-bg.svg",
         iconSvg: "assets/svgs/vishnu-tilak-icon.svg"
@@ -116,6 +127,7 @@ const vedasData = [
         hiUrl: "assets/meanings/shri-sharada-stotram-hi.txt",
         enUrl: "assets/meanings/shri-sharada-stotram-en.txt",
         hoverColor: "var(--bauhaus-mint)",
+        cardShape: "bg-shape-4", // Archway (Temple of knowledge)
         tags: ["Devi", "Stotram", "Wednesday"]
     },
     {
@@ -124,6 +136,7 @@ const vedasData = [
         description: "Powerful hymn dedicated to the Sun God, Aditya.",
         txtUrl: "assets/txts/aditya-hridayam.txt",
         hoverColor: "var(--bauhaus-orange)",
+        cardShape: "bg-shape-1", // Split-tension circle (Sun)
         tags: ["Surya", "Stotram", "Sunday"]
     },
     {
@@ -132,6 +145,7 @@ const vedasData = [
         description: "Adi Shankaracharya's famous composition on devotion.",
         txtUrl: "assets/txts/bhajagovindam.txt",
         hoverColor: "var(--bauhaus-cyan)",
+        cardShape: "bg-shape-12", // Horizon line
         bgSvg: "assets/svgs/krishna-bg.svg",
         tags: ["Vishnu", "Stotram", "Thursday"]
     },
@@ -140,7 +154,8 @@ const vedasData = [
         title: "Bhu Suktam",
         description: "Vedic hymn revering Mother Earth (Bhumi).",
         txtUrl: "assets/txts/bhu-suktam.txt",
-        hoverColor: "var(--bauhaus-lime)",
+        hoverColor: "var(--bauhaus-green)",
+        cardShape: "bg-shape-19", // Checkerboard (Fields/Earth)
         tags: ["Devi", "Suktam", "Friday"]
     },
     {
@@ -148,7 +163,8 @@ const vedasData = [
         title: "Bilvashtakam",
         description: "Eight verses glorifying the offering of Bilva leaves.",
         txtUrl: "assets/txts/bilvashtakam.txt",
-        hoverColor: "var(--bauhaus-green)",
+        hoverColor: "var(--bauhaus-lime)",
+        cardShape: "bg-shape-3", // Kinetic sliced triangle (Trifoliate leaf)
         bgSvg: "assets/svgs/shiva-bg.svg",
         tags: ["Shiva", "Stotram", "Monday"]
     },
@@ -158,6 +174,7 @@ const vedasData = [
         description: "Dynamic hymn dedicated to Lord Kalabhairava of Kashi.",
         txtUrl: "assets/txts/kalabhairavashtakam.txt",
         hoverColor: "var(--bauhaus-magenta)",
+        cardShape: "bg-shape-11", // Warning stripes (Time/Fierce)
         bgSvg: "assets/svgs/rudra-bg.svg",
         tags: ["Shiva", "Stotram", "Tuesday"]
     },
@@ -166,7 +183,8 @@ const vedasData = [
         title: "Lingashtakam",
         description: "Eight verses in praise of the sacred Shiva Lingam.",
         txtUrl: "assets/txts/lingashtakam.txt",
-        hoverColor: "var(--bauhaus-indigo)",
+        hoverColor: "var(--bauhaus-purple)",
+        cardShape: "bg-shape-8", // Heavy stark pillar
         bgSvg: "assets/svgs/shiva-bg.svg",
         tags: ["Shiva", "Stotram", "Monday"]
     },
@@ -176,6 +194,7 @@ const vedasData = [
         description: "Hymn praising Goddess Durga, slayer of Mahishasura.",
         txtUrl: "assets/txts/mahishasura-mardini-stotram.txt",
         hoverColor: "var(--bauhaus-coral)",
+        cardShape: "bg-shape-10", // Heavy right-angled triangle
         bgSvg: "assets/svgs/devi-bg.svg",
         tags: ["Devi", "Stotram", "Friday"]
     },
@@ -184,7 +203,8 @@ const vedasData = [
         title: "Medha Suktam",
         description: "Vedic prayer for intellect, memory, and divine wisdom.",
         txtUrl: "assets/txts/medha-suktam.txt",
-        hoverColor: "var(--bauhaus-cobalt)",
+        hoverColor: "var(--bauhaus-yellow)",
+        cardShape: "bg-shape-22", // Hollow window (opening mind)
         tags: ["Devi", "Suktam", "Wednesday"]
     },
     {
@@ -193,6 +213,7 @@ const vedasData = [
         description: "Hymn dedicated to Lord Narayana, the supreme cosmic being.",
         txtUrl: "assets/txts/narayana-suktam.txt",
         hoverColor: "var(--bauhaus-blue)",
+        cardShape: "bg-shape-7", // Crossing beams (Cosmic web)
         bgSvg: "assets/svgs/krishna-bg.svg",
         tags: ["Vishnu", "Suktam", "Thursday"]
     },
@@ -202,6 +223,7 @@ const vedasData = [
         description: "Hymn honoring Goddess Nila, consort of Lord Vishnu.",
         txtUrl: "assets/txts/nila-suktam.txt",
         hoverColor: "var(--bauhaus-teal)",
+        cardShape: "bg-shape-14", // Inverted half-circle
         bgSvg: "assets/svgs/devi-bg.svg",
         tags: ["Devi", "Suktam", "Friday"] 
     },
@@ -210,7 +232,8 @@ const vedasData = [
         title: "Purusha Suktam",
         description: "Profound Vedic hymn describing the cosmic being.",
         txtUrl: "assets/txts/purusha-suktam.txt",
-        hoverColor: "var(--bauhaus-purple)",
+        hoverColor: "var(--bauhaus-slate)",
+        cardShape: "bg-shape-26", // Floating ziggurat
         bgSvg: "assets/svgs/krishna-bg.svg",
         tags: ["Vishnu", "Suktam", "Thursday"] 
     },
@@ -222,6 +245,7 @@ const vedasData = [
         hiUrl: "assets/meanings/shiva-margabandhu-stotram-hi.txt",
         enUrl: "assets/meanings/shiva-margabandhu-stotram-en.txt",
         hoverColor: "var(--bauhaus-mint)",
+        cardShape: "bg-shape-24", // Structural L-Beam (Protection)
         bgSvg: "assets/svgs/trishool-bg.svg",
         tags: ["Shiva", "Stotram", "Monday"]
     },
@@ -232,7 +256,8 @@ const vedasData = [
         txtUrl: "assets/txts/shiva-panchakshara-stotram.txt",
         hiUrl: "assets/meanings/shiva-panchakshara-stotram-hi.txt",
         enUrl: "assets/meanings/shiva-panchakshara-stotram-en.txt",
-        hoverColor: "var(--bauhaus-yellow)",
+        hoverColor: "var(--bauhaus-mustard)",
+        cardShape: "bg-shape-5", // Isometric Diamond
         bgSvg: "assets/svgs/trishool-bg.svg",
         tags: ["Shiva", "Stotram", "Monday"]
     },
@@ -241,8 +266,9 @@ const vedasData = [
         title: "Shiva Tandava Stotram",
         description: "Ravana's powerful composition praising Shiva's cosmic dance.",
         txtUrl: "assets/txts/shiva-tandava-stotram.txt",
-        hoverColor: "var(--bauhaus-red)",
-        bgSvg: "assets/svgs/adiyogi-bg.svg",
+        hoverColor: "var(--bauhaus-rust)", // Dynamic / Fire
+        cardShape: "bg-shape-2", // Heavy bracket (Stomping foot)
+        bgSvg: "assets/svgs/rudra-bg.svg",
         tags: ["Shiva", "Stotram", "Monday"]
     },
     {
@@ -250,7 +276,8 @@ const vedasData = [
         title: "Sri Rudram Laghunyasam",
         description: "Preparatory purifying mantras chanted before Sri Rudram.",
         txtUrl: "assets/txts/sri-rudram-laghunyasam.txt",
-        hoverColor: "var(--bauhaus-olive)",
+        hoverColor: "var(--bauhaus-violet)",
+        cardShape: "bg-shape-6", // Radar/Expanding corner (Purification)
         bgSvg: "assets/svgs/adiyogi-bg.svg",
         tags: ["Shiva", "Rudram", "Monday"]
     },
@@ -260,6 +287,7 @@ const vedasData = [
         description: "Goswami Tulsidas's beautiful eight-verse hymn to Lord Shiva.",
         txtUrl: "assets/txts/sri-shiv-rudrashtakam.txt",
         hoverColor: "var(--bauhaus-cyan)",
+        cardShape: "bg-shape-16", // Stark mathematical plus/cross
         bgSvg: "assets/svgs/trishool-bg.svg",
         tags: ["Shiva", "Stotram", "Monday"]
     },
@@ -268,7 +296,8 @@ const vedasData = [
         title: "Sri Suktam",
         description: "Vedic hymn invoking Goddess Lakshmi for wealth and prosperity.",
         txtUrl: "assets/txts/sri-suktam.txt",
-        hoverColor: "var(--bauhaus-pink)",
+        hoverColor: "var(--bauhaus-magenta)",
+        cardShape: "bg-shape-17", // Target / Lotus center
         bgSvg: "assets/svgs/devi-bg.svg",
         tags: ["Devi", "Suktam", "Friday"]
     },
@@ -280,6 +309,7 @@ const vedasData = [
         hiUrl: "assets/meanings/kshama-prarthana-hi.txt",
         enUrl: "assets/meanings/kshama-prarthana-en.txt",
         hoverColor: "var(--bauhaus-teal)",
+        cardShape: "bg-shape-12", // Horizon line (Peace / Resolution)
         tags: ["Generic", "Prarthana", "Rudram"]
     }
 ];

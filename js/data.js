@@ -19,7 +19,7 @@ const vedasData = [
         description: "Salutations to Rudra, the roaring storm.",
         txtUrl: "assets/txts/sri-rudram-namakam.txt",
         hoverColor: "var(--bauhaus-teal)",
-        bgSvg: "assets/svgs/adiyogi-bg.svg",
+        bgSvg: "assets/svgs/rudra-bg.svg",
         tags: ["Shiva", "Suktam", "Rudram", "Monday"]
     },
     {
@@ -28,7 +28,7 @@ const vedasData = [
         description: "Fulfillment of desires through Rudra.",
         txtUrl: "assets/txts/sri-rudram-chamakam.txt",
         hoverColor: "var(--bauhaus-cobalt)",
-        bgSvg: "assets/svgs/adiyogi-bg.svg",
+        bgSvg: "assets/svgs/rudra-bg.svg",
         tags: ["Shiva", "Suktam", "Rudram", "Monday"]
     },
     {
@@ -149,6 +149,7 @@ const vedasData = [
         description: "Eight verses glorifying the offering of Bilva leaves.",
         txtUrl: "assets/txts/bilvashtakam.txt",
         hoverColor: "var(--bauhaus-green)",
+        bgSvg: "assets/svgs/shiva-bg.svg",
         tags: ["Shiva", "Stotram", "Monday"]
     },
     {
@@ -157,6 +158,7 @@ const vedasData = [
         description: "Dynamic hymn dedicated to Lord Kalabhairava of Kashi.",
         txtUrl: "assets/txts/kalabhairavashtakam.txt",
         hoverColor: "var(--bauhaus-magenta)",
+        bgSvg: "assets/svgs/rudra-bg.svg",
         tags: ["Shiva", "Stotram", "Tuesday"]
     },
     {
@@ -165,6 +167,7 @@ const vedasData = [
         description: "Eight verses in praise of the sacred Shiva Lingam.",
         txtUrl: "assets/txts/lingashtakam.txt",
         hoverColor: "var(--bauhaus-indigo)",
+        bgSvg: "assets/svgs/shiva-bg.svg",
         tags: ["Shiva", "Stotram", "Monday"]
     },
     {
@@ -173,6 +176,7 @@ const vedasData = [
         description: "Hymn praising Goddess Durga, slayer of Mahishasura.",
         txtUrl: "assets/txts/mahishasura-mardini-stotram.txt",
         hoverColor: "var(--bauhaus-coral)",
+        bgSvg: "assets/svgs/devi-bg.svg",
         tags: ["Devi", "Stotram", "Friday"]
     },
     {
@@ -198,6 +202,7 @@ const vedasData = [
         description: "Hymn honoring Goddess Nila, consort of Lord Vishnu.",
         txtUrl: "assets/txts/nila-suktam.txt",
         hoverColor: "var(--bauhaus-teal)",
+        bgSvg: "assets/svgs/devi-bg.svg",
         tags: ["Devi", "Suktam", "Friday"] 
     },
     {
@@ -264,6 +269,7 @@ const vedasData = [
         description: "Vedic hymn invoking Goddess Lakshmi for wealth and prosperity.",
         txtUrl: "assets/txts/sri-suktam.txt",
         hoverColor: "var(--bauhaus-pink)",
+        bgSvg: "assets/svgs/devi-bg.svg",
         tags: ["Devi", "Suktam", "Friday"]
     },
     {

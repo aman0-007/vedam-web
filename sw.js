@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'vedam-v3'; // Bumped to v3 to force cache refresh and font caching
+const CACHE_NAME = 'vedam-v1'; // Bumped to v1 to force cache refresh and font caching
 
 const ASSETS_TO_CACHE = [
     './',
@@ -38,6 +38,9 @@ const ASSETS_TO_CACHE = [
     './assets/svgs/krishna-bg.svg',
     './assets/svgs/trishool-bg.svg',
     './assets/svgs/adiyogi-bg.svg',
+    './assets/svgs/rudra-bg.svg',
+    './assets/svgs/shiva-bg.svg',
+    './assets/svgs/devi-bg.svg',
 
     // Text Files
     './assets/txts/ganapati-prarthana.txt',

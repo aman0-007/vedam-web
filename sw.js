@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'vedam-v1'; // Bumped to v1 to force cache refresh and font caching
+const CACHE_NAME = 'vedam-v2'; // Bumped to v1 to force cache refresh and font caching
 
 const ASSETS_TO_CACHE = [
     './',
@@ -93,7 +93,9 @@ const ASSETS_TO_CACHE = [
     './assets/meanings/shri-sharada-stotram-hi.txt',
     './assets/meanings/shri-sharada-stotram-en.txt',
     './assets/meanings/shri-rama-stotram-hi.txt',
-    './assets/meanings/shri-rama-stotram-en.txt'
+    './assets/meanings/shri-rama-stotram-en.txt',
+    './assets/meanings/bhajagovindan-hi.txt',
+    './assets/meanings/bhajagovindan-en.txt',
 ];
 
 self.addEventListener('install', (event) => {

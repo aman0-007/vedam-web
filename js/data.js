@@ -144,6 +144,8 @@ const vedasData = [
         title: "Bhaja Govindam",
         description: "Adi Shankaracharya's famous composition on devotion.",
         txtUrl: "assets/txts/bhajagovindam.txt",
+        hiUrl: "assets/meanings/bhajagovindam-hi.txt",
+        enUrl: "assets/meanings/bhajagovindam-en.txt",
         hoverColor: "var(--bauhaus-cyan)",
         cardShape: "bg-shape-12", // Horizon line
         bgSvg: "assets/svgs/krishna-bg.svg",

@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'vedam-v1'; // Bumped to v1 to force cache refresh and font caching
+const CACHE_NAME = 'vedam-v2'; // Bumped to v1 to force cache refresh and font caching
 
 const ASSETS_TO_CACHE = [
     './',
@@ -26,6 +26,7 @@ const ASSETS_TO_CACHE = [
     './js/text-engine.js',
     './js/protect.js',
     './js/search.js',
+    './js/autoscroll.js',
 
     // Brand Assets
     './assets/favicon.svg',

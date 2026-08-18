@@ -3,15 +3,16 @@
 const scrollBtn = document.getElementById('auto-scroll-btn');
 const scrollContainer = document.querySelector('.text-scroll-container');
 const closeBtn = document.getElementById('close-reader');
+const toolbar = document.querySelector('.bauhaus-toolbar'); // Grab the toolbar
 
 let isScrolling = false;
 let scrollAnimationId;
-let scrollSpeed = 0.6; // Pixels per frame. Adjust higher for faster, lower for slower.
+let scrollSpeed = 0.3; // LOWERED SPEED: Much calmer pace for chanting
 
 const startScroll = () => {
     isScrolling = true;
     scrollBtn.innerText = "||"; // Change to Pause icon
-    scrollBtn.style.color = "var(--bauhaus-red)"; // Highlight to show it's active
+    scrollBtn.style.color = "var(--bauhaus-red)"; // Highlight active state
     
     const scrollStep = () => {
         if (!isScrolling) return;
@@ -27,6 +28,15 @@ const startScroll = () => {
     };
     
     scrollAnimationId = requestAnimationFrame(scrollStep);
+
+    // NEW: Fade out the toolbar 1 second after tapping play
+    setTimeout(() => {
+        if (isScrolling && toolbar) {
+            // Force it to fade out smoothly using inline styles
+            toolbar.style.opacity = '0';
+            toolbar.style.pointerEvents = 'none';
+        }
+    }, 1000);
 };
 
 const stopScroll = () => {
@@ -38,7 +48,7 @@ const stopScroll = () => {
 
 // Toggle button click
 scrollBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Keep toolbar awake
+    e.stopPropagation(); 
     if (isScrolling) {
         stopScroll();
     } else {
@@ -46,11 +56,32 @@ scrollBtn.addEventListener('click', (e) => {
     }
 });
 
-// SMART UX: Pause automatically if the user touches or scrolls manually
-scrollContainer.addEventListener('touchstart', stopScroll, { passive: true });
-scrollContainer.addEventListener('wheel', stopScroll, { passive: true });
+// --- SMART UX & RESET LOGIC ---
 
-// RESET: Ensure it stops if the user closes the reader or hits the back button
+// Helper: If user touches screen, reset the inline opacity so the main text-engine 
+// can wake the toolbar back up normally.
+const resetToolbarVisibility = () => {
+    if (toolbar) {
+        toolbar.style.opacity = ''; 
+        toolbar.style.pointerEvents = '';
+    }
+};
+
+// Pause automatically if the user touches or scrolls manually
+scrollContainer.addEventListener('touchstart', () => {
+    stopScroll();
+    resetToolbarVisibility();
+}, { passive: true });
+
+scrollContainer.addEventListener('wheel', () => {
+    stopScroll();
+    resetToolbarVisibility();
+}, { passive: true });
+
+// Ensure tapping anywhere else resets the toolbar overrides
+document.addEventListener('click', resetToolbarVisibility);
+
+// Reset when modal closes
 if (closeBtn) closeBtn.addEventListener('click', stopScroll);
 window.addEventListener('popstate', stopScroll);
 

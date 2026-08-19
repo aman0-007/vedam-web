@@ -40,12 +40,12 @@ const filterConfig = {
             { label: "ADITYA", value: "Aditya" }, { label: "BHAJA GOVINDAM", value: "Bhaja" },
             { label: "MAHISHASURA", value: "Mahishasura" }, { label: "TANDAVA", value: "Tandava" },
             { label: "LINGASHTAKAM", value: "Lingashtakam" }, { label: "BILVASHTAKAM", value: "Bilvashtakam" },
-            { label: "KALABHAIRAVA", value: "Kalabhairava" }, { label: "RAMA", value: "Rama" }, 
-            { label: "SHARADA", value: "Sharada" },
-            /* --- NEWLY ADDED STOTRAMS --- */
-            { label: "MARGABANDHU", value: "Margabandhu" }, 
-            { label: "PANCHAKSHARA", value: "Panchakshara" }, 
-            { label: "RUDRASHTAKAM", value: "Rudrashtakam" }
+            { label: "KALABHAIRAVA", value: "Kalabhairava" }, { label: "SHARADA", value: "Sharada" },
+            { label: "MARGABANDHU", value: "Margabandhu" }, { label: "PANCHAKSHARA", value: "Panchakshara" }, 
+            { label: "RUDRASHTAKAM", value: "Rudrashtakam" },
+            { label: "SHRI RAMA", value: "Shri Rama" }, // Renamed from "RAMA" to prevent overlap
+            { label: "NAMA RAMAYANA", value: "Nama Ramayana" },
+            { label: "DEVI APARADHA", value: "Aparadha" }
         ]
     },
     "PATH": {
@@ -58,10 +58,19 @@ const filterConfig = {
     },
     "PRARTHANA": {
         broadMatch: ["Prarthana"],
-        /* --- NEWLY ADDED PRARTHANA BUTTONS --- */
         children: [
             { label: "GANAPATI", value: "Ganapati Prarthana" },
-            { label: "KSHAMA", value: "Kshama" }
+            { label: "KSHAMA", value: "Kshama" },
+            /* --- NEW PRARTHANA --- */
+            { label: "DEVI APARADHA", value: "Aparadha" }
+        ]
+    },
+    "UPANISHAD": {
+        broadMatch: ["Upanishad"],
+        children: [
+            { label: "ISHA", value: "Isha" },
+            { label: "MANDUKYA", value: "Mandukya" },
+            { label: "GANAPATI", value: "Atharvashirsham" }
         ]
     }
 };

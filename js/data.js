@@ -66,12 +66,12 @@ const vedasData = [
     },
     {
         id: "07",
-        title: "Ganpati Atharvashirsham",
+        title: "Ganapati Atharvashirsham",
         description: "Upanishad dedicated to Ganesha.",
         txtUrl: "assets/txts/ganapati-atharvashirsham.txt",
         hoverColor: "var(--bauhaus-red)", // Sindoor
         cardShape: "bg-shape-23", // Hexagon (intellect/structure)
-        tags: ["Ganesha", "Suktam", "Tuesday"],
+        tags: ["Ganesha", "Upanishad", "Atharvashirsham", "Tuesday"],
         bgSvg: "assets/svgs/ganesh-bg.svg",
         iconSvg: "assets/svgs/ganesh-icon.svg"
     },
@@ -185,6 +185,8 @@ const vedasData = [
         title: "Lingashtakam",
         description: "Eight verses in praise of the sacred Shiva Lingam.",
         txtUrl: "assets/txts/lingashtakam.txt",
+        hiUrl: "assets/meanings/lingashtakam-hi.txt",
+        enUrl: "assets/meanings/lingashtakam-en.txt",
         hoverColor: "var(--bauhaus-purple)",
         cardShape: "bg-shape-8", // Heavy stark pillar
         bgSvg: "assets/svgs/shiva-bg.svg",
@@ -288,6 +290,8 @@ const vedasData = [
         title: "Sri Shiv Rudrashtakam",
         description: "Goswami Tulsidas's beautiful eight-verse hymn to Lord Shiva.",
         txtUrl: "assets/txts/sri-shiv-rudrashtakam.txt",
+        hiUrl: "assets/meanings/sri-shiv-rudrashtakam-hi.txt",
+        enUrl: "assets/meanings/sri-shiv-rudrashtakam-en.txt",
         hoverColor: "var(--bauhaus-cyan)",
         cardShape: "bg-shape-16", // Stark mathematical plus/cross
         bgSvg: "assets/svgs/trishool-bg.svg",
@@ -313,5 +317,53 @@ const vedasData = [
         hoverColor: "var(--bauhaus-teal)",
         cardShape: "bg-shape-12", // Horizon line (Peace / Resolution)
         tags: ["Generic", "Prarthana", "Rudram"]
+    },
+    // --- BRAND NEW ADDITIONS (31-34) ---
+    {
+        id: "31",
+        title: "Devi Aparadha Kshamapana Stotram",
+        description: "A prayer seeking forgiveness from the Divine Mother for transgressions.",
+        txtUrl: "assets/txts/devi-aparadha-kshamapana-stotram.txt",
+        hiUrl: "assets/meanings/devi-aparadha-kshamapana-stotram-hi.txt",
+        enUrl: "assets/meanings/devi-aparadha-kshamapana-stotram-en.txt",
+        hoverColor: "var(--bauhaus-pink)", // Compassion / Mother
+        cardShape: "bg-shape-22", // Hollow window (Opening the heart)
+        bgSvg: "assets/svgs/devi-bg.svg",
+        tags: ["Devi", "Stotram", "Prarthana", "Friday"]
+    },
+    {
+        id: "32",
+        title: "Isha Upanishad",
+        description: "One of the principal Upanishads focusing on the nature of the Supreme.",
+        txtUrl: "assets/txts/isha-upanishad.txt",
+        hiUrl: "assets/meanings/isha-upanishad-hi.txt",
+        enUrl: "assets/meanings/isha-upanishad-en.txt",
+        hoverColor: "var(--bauhaus-slate)", // Deep Structure / Knowledge
+        cardShape: "bg-shape-7", // Crossing beams (Cosmic Web)
+        tags: ["Generic", "Upanishad", "Isha"] // Fits generally into ALL 
+    },
+    {
+        id: "33",
+        title: "Mandukya Upanishad",
+        description: "Profound text expounding the syllable OM and the states of consciousness.",
+        txtUrl: "assets/txts/mandukya-upanishad.txt",
+        hiUrl: "assets/meanings/mandukya-upanishad-hi.txt",
+        enUrl: "assets/meanings/mandukya-upanishad-en.txt",
+        hoverColor: "var(--bauhaus-indigo)", // Consciousness / Deep Mind
+        cardShape: "bg-shape-17", // Target / Concentric circles for OM
+        tags: ["Generic", "Upanishad", "Mandukya"] // Fits generally into ALL
+    },
+    {
+        id: "34",
+        title: "Nama Ramayana",
+        description: "The entire story of Lord Rama condensed into a series of divine names.",
+        txtUrl: "assets/txts/nama-ramayana.txt",
+        hiUrl: "assets/meanings/nama-ramayana-hi.txt",
+        enUrl: "assets/meanings/nama-ramayana-en.txt",
+        hoverColor: "var(--bauhaus-orange)",
+        cardShape: "bg-shape-27", // Typographic Bars (Sequences / Story progression)
+        bgSvg: "assets/svgs/vishnu-bg.svg",
+        iconSvg: "assets/svgs/vishnu-tilak-icon.svg",
+        tags: ["Rama", "Stotram", "Thursday"]
     }
 ];

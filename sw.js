@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'vedam-v2'; // Bumped to v1 to force cache refresh and font caching
+const CACHE_NAME = 'vedam-v1'; // Bumped to v1 to force cache refresh and font caching
 
 const ASSETS_TO_CACHE = [
     './',
@@ -26,7 +26,6 @@ const ASSETS_TO_CACHE = [
     './js/text-engine.js',
     './js/protect.js',
     './js/search.js',
-    './js/autoscroll.js',
 
     // Brand Assets
     './assets/favicon.svg',
@@ -74,6 +73,10 @@ const ASSETS_TO_CACHE = [
     './assets/txts/sri-shiv-rudrashtakam.txt',
     './assets/txts/sri-suktam.txt',
     './assets/txts/kshama-prarthana.txt',
+    './assets/txts/nama-ramayana.txt',
+    './assets/txts/devi-aparadha-kshamapana-stotram.txt',
+    './assets/txts/mandukya-upanishad.txt',
+    './assets/txts/isha-upanishad.txt',
 
     // Meaning Files
     './assets/meanings/durga-suktam-hi.txt',
@@ -94,8 +97,20 @@ const ASSETS_TO_CACHE = [
     './assets/meanings/shri-sharada-stotram-en.txt',
     './assets/meanings/shri-rama-stotram-hi.txt',
     './assets/meanings/shri-rama-stotram-en.txt',
-    './assets/meanings/bhajagovindan-hi.txt',
-    './assets/meanings/bhajagovindan-en.txt',
+    './assets/meanings/bhajagovindam-hi.txt',
+    './assets/meanings/bhajagovindam-en.txt',
+    './assets/meanings/nama-ramayana-hi.txt',
+    './assets/meanings/nama-ramayana-en.txt',
+    './assets/meanings/devi-aparadha-kshamapana-stotram-hi.txt',
+    './assets/meanings/devi-aparadha-kshamapana-stotram-en.txt',
+    './assets/meanings/mandukya-upanishad-hi.txt',
+    './assets/meanings/mandukya-upanishad-en.txt',
+    './assets/meanings/isha-upanishad-hi.txt',
+    './assets/meanings/isha-upanishad-en.txt',
+    './assets/meanings/sri-shiv-rudrashtakam-hi.txt',
+    './assets/meanings/sri-shiv-rudrashtakam-en.txt',
+    './assets/meanings/lingashtakam-hi.txt',
+    './assets/meanings/lingashtakam-en.txt'
 ];
 
 self.addEventListener('install', (event) => {

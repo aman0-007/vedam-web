@@ -106,7 +106,7 @@
 
 .version-tag {
     position: absolute;
-    right: calc(100% + 38vh);
+    right: calc(100% + 42vh);
     margin-right: 4rem;
     white-space: nowrap;
     font-size: 0.55rem;

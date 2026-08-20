@@ -104,14 +104,23 @@
     gap: 2rem; /* Tighter gap */
 }
 
-
-/* css/layout.css (Update the mobile media query at the bottom) */
+.version-tag {
+    position: absolute;
+    right: calc(100% + 35vh);
+    margin-right: 4rem;
+    white-space: nowrap;
+    font-size: 0.55rem;
+    font-weight: 600;
+    opacity: 0.35; 
+    letter-spacing: 2px;
+    font-family: var(--font-main);
+    text-transform: lowercase;
+}
 
 @media (max-width: 768px) {
     .side-title {
-        /* Keep it visible, just scale it down slightly to fit the mobile edge */
         font-size: 0.8rem;
-        left: 2%;
+        left: 2.7%;
     }
     
     .content-grid {

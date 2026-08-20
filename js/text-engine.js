@@ -97,27 +97,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. THE PURE TEXT LOADER (No UI handling here anymore) ---
     const loadTextFile = async (url, isTranslation = false) => {
-        if (isTranslation) {
-            titleEl.style.display = 'none';
-            if (titleDivider) titleDivider.style.display = 'none';
-        } else {
-            titleEl.style.display = '';
-            if (titleDivider) titleDivider.style.display = '';
-        }
+        try {
+            // 1. Instantly trigger CSS fade-out
+            contentEl.style.opacity = '0';
 
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("File not found");
-        const text = await response.text();
-        
-        // Inject the HTML directly
-        contentEl.innerHTML = parseMiniMarkdown(text, isTranslation);
-        
-        // Reset scroll position
-        const scrollContainer = document.querySelector('.text-scroll-container');
-        if (scrollContainer) {
-            scrollContainer.scrollTop = 0;
-        } else {
-            modal.scrollTop = 0;
+            if (isTranslation) {
+                titleEl.style.display = 'none';
+                if (titleDivider) titleDivider.style.display = 'none';
+            } else {
+                titleEl.style.display = '';
+                if (titleDivider) titleDivider.style.display = '';
+            }
+
+            const response = await fetch(url);
+            if (!response.ok) throw new Error("File not found");
+            const text = await response.text();
+            
+            // 2. Wait exactly 180ms for the fade-out, swap text, and fade back in
+            setTimeout(() => {
+                contentEl.innerHTML = parseMiniMarkdown(text, isTranslation);
+                
+                // Reset scroll position
+                const scrollContainer = document.querySelector('.text-scroll-container');
+                if (scrollContainer) {
+                    scrollContainer.scrollTop = 0;
+                } else {
+                    modal.scrollTop = 0;
+                }
+
+                // 3. Trigger CSS fade-in
+                contentEl.style.opacity = '1';
+            }, 180);
+
+        } catch (error) {
+            console.error("Error loading text:", error);
+            contentEl.innerHTML = "Error loading document.";
+            contentEl.style.opacity = '1'; // Ensure it becomes visible even on error
         }
     };
 
@@ -173,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // STEP 2: WAIT FOR TEXT AND FORCE LOADER FOR AT LEAST 800ms
-            const minLoaderTime = new Promise(resolve => setTimeout(resolve, 2500));
+            const minLoaderTime = new Promise(resolve => setTimeout(resolve, 1500));
             const fetchTask = loadTextFile(targetUrl, isTranslation);
             
             await Promise.all([minLoaderTime, fetchTask]);
@@ -196,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- 3. IN-TRACK TOGGLE SWITCH CLICK HANDLER ---
-    langToggle.addEventListener('click', async (e) => {
+    langToggle.addEventListener('click', (e) => {
         e.stopPropagation();
         currentMeaningLang = (currentMeaningLang === 'hi') ? 'en' : 'hi';
         
@@ -204,17 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const targetUrl = activeUrls[currentMeaningLang];
         if (targetUrl) {
-            // Trigger sequence again for language change
-            if (window.showLoader) window.showLoader();
-            try {
-                const minLoaderTime = new Promise(resolve => setTimeout(resolve, 800));
-                const fetchTask = loadTextFile(targetUrl, true);
-                await Promise.all([minLoaderTime, fetchTask]);
-            } catch (error) {
-                console.error("Error switching language:", error);
-            } finally {
-                if (window.hideLoader) window.hideLoader();
-            }
+            loadTextFile(targetUrl, true);
         }
     });
 

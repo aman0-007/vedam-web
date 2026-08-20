@@ -43,7 +43,7 @@ const filterConfig = {
             { label: "KALABHAIRAVA", value: "Kalabhairava" }, { label: "SHARADA", value: "Sharada" },
             { label: "MARGABANDHU", value: "Margabandhu" }, { label: "PANCHAKSHARA", value: "Panchakshara" }, 
             { label: "RUDRASHTAKAM", value: "Rudrashtakam" },
-            { label: "SHRI RAMA", value: "Shri Rama" }, // Renamed from "RAMA" to prevent overlap
+            { label: "SHRI RAMA", value: "Shri Rama" }, 
             { label: "NAMA RAMAYANA", value: "Nama Ramayana" },
             { label: "DEVI APARADHA", value: "Aparadha" }
         ]
@@ -61,7 +61,6 @@ const filterConfig = {
         children: [
             { label: "GANAPATI", value: "Ganapati Prarthana" },
             { label: "KSHAMA", value: "Kshama" },
-            /* --- NEW PRARTHANA --- */
             { label: "DEVI APARADHA", value: "Aparadha" }
         ]
     },
@@ -80,28 +79,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const primaryBtns = document.querySelectorAll('#primary-filters .filter-btn');
     const subFilterContainer = document.getElementById('sub-filters');
 
-    // const backgroundShapes = [
-    //     'bg-shape-1', 'bg-shape-2', 'bg-shape-3', 'bg-shape-4', 
-    //     'bg-shape-5', 'bg-shape-6', 'bg-shape-7', 'bg-shape-8',
-    //     'bg-shape-9', 'bg-shape-10', 'bg-shape-11', 'bg-shape-12',
-    //     'bg-shape-13', 'bg-shape-14', 'bg-shape-15', 'bg-shape-16',
-    //     'bg-shape-17', 'bg-shape-18', 'bg-shape-19', 'bg-shape-20',
-    //     'bg-shape-21', 'bg-shape-22', 'bg-shape-23', 'bg-shape-24',
-    //     'bg-shape-25', 'bg-shape-26', 'bg-shape-27', 'bg-shape-28'
-    // ];
-
     // 1. Core Render Function
     window.renderCards = (filterArray = ['All'], searchQuery = '') => {
         gridContainer.innerHTML = '';
         const query = searchQuery.toLowerCase().trim();
 
         const filteredData = vedasData.filter(veda => {
-            // Check if card matches ANY of the current tags or titles in the filter Array
             const matchesTag = filterArray.includes('All') || filterArray.some(val => 
                 veda.tags.includes(val) || veda.title.includes(val)
             );
             
-            // Text Search Check
             const matchesSearch = query === '' || 
                                   veda.title.toLowerCase().includes(query) || 
                                   veda.description.toLowerCase().includes(query) || 
@@ -110,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return matchesTag && matchesSearch;
         });
 
-        filteredData.forEach((veda, index) => {
+        filteredData.forEach((veda) => {
             const card = document.createElement('article');
             card.classList.add('pdf-card');
             card.dataset.txtUrl = veda.txtUrl;
@@ -121,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (veda.enUrl) card.dataset.enUrl = veda.enUrl;
 
             card.style.setProperty('--card-hover-color', veda.hoverColor);
-            // const bgShapeClass = backgroundShapes[index % backgroundShapes.length];
             const bgShapeClass = veda.cardShape || 'bg-shape-1';
             const iconHtml = veda.iconSvg ? `<img src="${veda.iconSvg}" class="card-icon" alt="Deity Icon">` : '';
 
@@ -148,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Render Sub-Filters Logic
     const renderSubFilters = (category) => {
         const config = filterConfig[category];
-        subFilterContainer.innerHTML = ''; // Clear old buttons
+        subFilterContainer.innerHTML = ''; 
 
         if (config.children.length === 0) {
             subFilterContainer.classList.add('hidden');
@@ -157,16 +143,15 @@ document.addEventListener('DOMContentLoaded', () => {
             
             config.children.forEach(child => {
                 const btn = document.createElement('button');
-                btn.className = 'filter-btn sub-btn'; // 'sub-btn' added for targeting
+                btn.className = 'filter-btn sub-btn'; 
                 btn.textContent = child.label;
                 btn.dataset.value = child.value;
                 
-                // Add click event to children
                 btn.addEventListener('click', (e) => {
                     document.querySelectorAll('.sub-btn').forEach(b => b.classList.remove('active'));
                     e.target.classList.add('active');
                     
-                    window.currentFilter = [e.target.dataset.value]; // Narrow to single item
+                    window.currentFilter = [e.target.dataset.value]; 
                     const searchInput = document.getElementById('search-input');
                     window.renderCards(window.currentFilter, searchInput ? searchInput.value : '');
                 });
@@ -179,13 +164,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Primary Button Click Logic
     primaryBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            // UI Updates
             primaryBtns.forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
 
             const category = e.target.dataset.category;
             
-            // State Updates (Decision A: Pass broad match array immediately)
             window.currentFilter = filterConfig[category].broadMatch;
             
             renderSubFilters(category);
@@ -197,4 +180,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial load
     window.renderCards(['All']);
+
+    // --- 4. BULLETPROOF ZERO-NETWORK SW VERSION FETCHER ---
+    (async () => {
+        try {
+            const sideTitle = document.querySelector('.side-title');
+            
+            if (sideTitle && 'caches' in window) {
+                const cacheNames = await caches.keys();
+                
+                const latestVersion = cacheNames
+                    .filter(name => name.startsWith('vedam-v'))
+                    .map(name => parseInt(name.split('-v')[1])) 
+                    .sort((a, b) => b - a)[0]; // Grabs the highest number instantly
+                
+                if (latestVersion) {
+                    const versionSpan = document.createElement('span');
+                    versionSpan.className = 'version-tag';
+                    versionSpan.textContent = `v${latestVersion}`;
+                    sideTitle.prepend(versionSpan);
+                }
+            }
+        } catch (error) {
+            console.warn("Could not fetch version from Cache Storage.", error);
+        }
+    })();
 });

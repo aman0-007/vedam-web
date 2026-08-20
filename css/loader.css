@@ -1,0 +1,144 @@
+/* css/loader.css */
+
+#loader-wrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-loader);
+  background-color: rgba(0, 0, 0, 0.2); 
+  transition: opacity 0.1s ease-out; 
+}
+
+#loader-wrapper.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; 
+}
+
+.glass-panel {
+  /* Scoped Glassmorphism Variables */
+  --glass-bg: rgba(244, 244, 240, 0.45);
+  --glass-blur: 16px;
+
+  /* The Glassmorphism Effect */
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  
+  /* The Brutalist Structure */
+  border: var(--border-thick);
+  box-shadow: var(--shadow-solid);
+  padding: 1.5rem;
+  
+  /* Internal Grid Layout */
+  display: grid;
+  grid-template-columns: 80px 80px;
+  grid-template-rows: 80px 80px;
+  gap: 12px;
+}
+
+/* Common Cell Styling */
+.grid-cell {
+  border: var(--border-thin);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Top Left: SVG Triangle */
+.svg-triangle {
+  width: 80%;
+  height: 80%;
+  animation: pulse-scale 1s infinite alternate cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Top Right: Mechanical Half-Circle */
+.half-circle {
+  width: 100%;
+  height: 50%;
+  background-color: var(--bauhaus-red);
+  border-radius: 100px 100px 0 0;
+  border-bottom: var(--border-thick);
+  transform-origin: bottom center;
+  animation: mech-rotate 2s infinite steps(4);
+}
+
+/* Bottom Left: Yantra Container */
+.yantra-cell {
+  padding: 5px;
+}
+
+/* Meditative, Continuous Rotation */
+.svg-yantra {
+  width: 100%;
+  height: 100%;
+  animation: yantra-spin 10s linear infinite;
+}
+
+/* The pulsing origin point */
+.yantra-bindu {
+  animation: bindu-pulse 2s infinite ease-in-out alternate;
+  transform-origin: center;
+}
+
+/* Self-drawing animation for polygons and outer circle */
+.svg-yantra circle:not(.yantra-bindu), 
+.svg-yantra polygon {
+  stroke-dasharray: 270;
+  stroke-dashoffset: 270;
+  animation: draw-yantra 3s ease-in-out infinite alternate;
+}
+
+/* Bottom Right: Utilitarian Typography */
+.text-cell {
+  flex-direction: column;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.text-cell span {
+  font-family: var(--font-reader);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  animation: blink 1s infinite steps(2);
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+@keyframes pulse-scale {
+  0% { transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+
+@keyframes mech-rotate {
+  0% { transform: translateY(25%) rotate(0deg); }
+  100% { transform: translateY(25%) rotate(360deg); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes yantra-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes bindu-pulse {
+  0% { transform: scale(0.6); }
+  100% { transform: scale(1.4); }
+}
+
+@keyframes draw-yantra {
+  0% { stroke-dashoffset: 270; }
+  100% { stroke-dashoffset: 0; }
+}

@@ -95,44 +95,39 @@ document.addEventListener('DOMContentLoaded', () => {
         return `<div class="formatted-meaning">${parsed}</div>`;
     };
 
+    // --- 1. THE PURE TEXT LOADER (No UI handling here anymore) ---
     const loadTextFile = async (url, isTranslation = false) => {
-        try {
-            contentEl.style.opacity = '0';
+        if (isTranslation) {
+            titleEl.style.display = 'none';
+            if (titleDivider) titleDivider.style.display = 'none';
+        } else {
+            titleEl.style.display = '';
+            if (titleDivider) titleDivider.style.display = '';
+        }
 
-            if (isTranslation) {
-                titleEl.style.display = 'none';
-                if (titleDivider) titleDivider.style.display = 'none';
-            } else {
-                titleEl.style.display = '';
-                if (titleDivider) titleDivider.style.display = '';
-            }
-
-            const response = await fetch(url);
-            if (!response.ok) throw new Error("File not found");
-            const text = await response.text();
-            
-            setTimeout(() => {
-                contentEl.innerHTML = parseMiniMarkdown(text, isTranslation);
-                contentEl.style.opacity = '1';
-                // Reset scroll position on load
-                const scrollContainer = document.querySelector('.text-scroll-container');
-                if (scrollContainer) {
-                    scrollContainer.scrollTop = 0;
-                } else {
-                    modal.scrollTop = 0;
-                }
-            }, 180);
-        } catch (error) {
-            console.error("Error loading text:", error);
-            contentEl.innerHTML = "Error loading document. Please check the file path.";
-            contentEl.style.opacity = '1';
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("File not found");
+        const text = await response.text();
+        
+        // Inject the HTML directly
+        contentEl.innerHTML = parseMiniMarkdown(text, isTranslation);
+        
+        // Reset scroll position
+        const scrollContainer = document.querySelector('.text-scroll-container');
+        if (scrollContainer) {
+            scrollContainer.scrollTop = 0;
+        } else {
+            modal.scrollTop = 0;
         }
     };
 
-    // --- MODAL TRIGGER (OPEN TEXT WITH SMART ROUTING) ---
-    gridContainer.addEventListener('click', (e) => {
+    // --- 2. MODAL TRIGGER (STRICT ASYNC SEQUENCE) ---
+    gridContainer.addEventListener('click', async (e) => {
         const card = e.target.closest('.pdf-card');
         if (!card) return;
+
+        // STEP 1: INSTANTLY SHOW THE LOADER OVER THE GRID
+        if (window.showLoader) window.showLoader();
 
         const clickedBadge = e.target.closest('.meaning-badge');
 
@@ -140,10 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
         activeUrls.hi = card.dataset.hiUrl || null;
         activeUrls.en = card.dataset.enUrl || null;
 
-        const bgSvg = card.dataset.bgSvg;
-
         titleEl.textContent = card.dataset.title;
         
+        const bgSvg = card.dataset.bgSvg;
         const randomBg = Math.floor(Math.random() * 6) + 1;
         readerBg.className = `reading-bg bauhaus-bg-${randomBg}`;
         readerBg.style.backgroundImage = '';
@@ -153,17 +147,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             watermarkBg.style.backgroundImage = 'none';
         }
-
-        // 1. Show the Modal
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; 
-        
-        // 2. Inject fake page into phone history
-        history.pushState({ readerOpen: true }, "", "#reading");
         
         currentFontSize = 1.2;
         contentEl.style.fontSize = `${currentFontSize}rem`;
-        fontIndicator.textContent = "100%";
+        if (fontIndicator) fontIndicator.textContent = "100%";
+
+        let isTranslation = false;
+        let targetUrl = activeUrls.txt;
 
         // SMART ROUTING:
         if (clickedBadge && (activeUrls.hi || activeUrls.en)) {
@@ -175,19 +165,38 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 langToggle.classList.add('hidden');
             }
-
-            loadTextFile(activeUrls[currentMeaningLang], true);
+            isTranslation = true;
+            targetUrl = activeUrls[currentMeaningLang];
         } else {
             langToggle.classList.add('hidden');
-            loadTextFile(activeUrls.txt, false);
         }
-        
-        // Hide the toolbar by default when opening the document
-        hideToolbar();
+
+        try {
+            // STEP 2: WAIT FOR TEXT AND FORCE LOADER FOR AT LEAST 800ms
+            const minLoaderTime = new Promise(resolve => setTimeout(resolve, 2500));
+            const fetchTask = loadTextFile(targetUrl, isTranslation);
+            
+            await Promise.all([minLoaderTime, fetchTask]);
+
+            // STEP 3: ONLY NOW, OPEN THE MODAL (The text is already inside!)
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+            history.pushState({ readerOpen: true }, "", "#reading");
+            hideToolbar();
+
+        } catch (error) {
+            console.error("Failed to load text:", error);
+            contentEl.innerHTML = "Error loading document.";
+            modal.classList.remove('hidden'); // Open it anyway to show the error
+            document.body.style.overflow = 'hidden'; 
+        } finally {
+            // STEP 4: HIDE THE LOADER
+            if (window.hideLoader) window.hideLoader();
+        }
     });
 
-    // --- IN-TRACK TOGGLE SWITCH CLICK HANDLER ---
-    langToggle.addEventListener('click', (e) => {
+    // --- 3. IN-TRACK TOGGLE SWITCH CLICK HANDLER ---
+    langToggle.addEventListener('click', async (e) => {
         e.stopPropagation();
         currentMeaningLang = (currentMeaningLang === 'hi') ? 'en' : 'hi';
         
@@ -195,7 +204,17 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const targetUrl = activeUrls[currentMeaningLang];
         if (targetUrl) {
-            loadTextFile(targetUrl, true);
+            // Trigger sequence again for language change
+            if (window.showLoader) window.showLoader();
+            try {
+                const minLoaderTime = new Promise(resolve => setTimeout(resolve, 800));
+                const fetchTask = loadTextFile(targetUrl, true);
+                await Promise.all([minLoaderTime, fetchTask]);
+            } catch (error) {
+                console.error("Error switching language:", error);
+            } finally {
+                if (window.hideLoader) window.hideLoader();
+            }
         }
     });
 

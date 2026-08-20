@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: var(--z-base);
     pointer-events: none; /* Text scrolls freely over it */
     opacity: 0.15; /* Subtle exhibition poster effect */
     transition: background-image 0.4s ease-in-out;

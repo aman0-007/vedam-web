@@ -29,6 +29,7 @@
 
     /* Typography */
     --font-main: 'Jost', sans-serif;
+    --font-reader: 'Noto Serif Devanagari', serif;
 
     /* Structural Elements */
     --border-thick: 4px solid;
@@ -43,6 +44,17 @@
     --shadow-solid: 6px 6px 0px var(--border-color);
     --shadow-hover: 10px 10px 0px var(--border-color);
     --transition-speed: 0.2s ease-in-out;
+
+    /* THE ARCHITECTURAL Z-INDEX SCALE */
+    --z-canvas: -10;       /* Deepest background patterns */
+    --z-base: 0;           /* Normal card backgrounds, watermarks */
+    --z-content: 10;       /* Text, standard content */
+    --z-interactive: 20;   /* Buttons, badges, toggles */
+    --z-header: 100;       /* Sticky header & navigation */
+    --z-modal: 200;        /* Reader overlay wrapper */
+    --z-modal-content: 210;/* Text inside the reader */
+    --z-hud: 250;          /* Floating toolbars, close buttons, reader UI */
+    --z-loader: 999;       /* System-level blocks everything */
 }
 
 body.dark-theme {

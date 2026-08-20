@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="css/filter.css">
     <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="css/meanings.css">
+    <link rel="stylesheet" href="css/loader.css">
 
 </head>
 
@@ -94,6 +95,29 @@
         <!-- PDF Cards will be injected here by JS -->
     </main>
 
+    <div id="loader-wrapper" class="hidden">
+        <div class="glass-panel">
+            <div class="grid-cell">
+                <svg viewBox="0 0 100 100" class="svg-triangle">
+                    <polygon points="50,15 15,85 85,85" fill="var(--bauhaus-mustard)" stroke="var(--border-color)" stroke-width="6" stroke-linejoin="miter" />
+                </svg>
+            </div>
+            <div class="grid-cell"><div class="half-circle"></div></div>
+            <div class="grid-cell yantra-cell">
+                <svg viewBox="0 0 100 100" class="svg-yantra">
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--border-color)" stroke-width="5" />
+                    <polygon points="50,10 84.64,70 15.36,70" fill="none" stroke="var(--bauhaus-blue)" stroke-width="4" stroke-linejoin="miter" />
+                    <polygon points="50,90 84.64,30 15.36,30" fill="none" stroke="var(--bauhaus-red)" stroke-width="4" stroke-linejoin="miter" />
+                    <circle cx="50" cy="50" r="8" fill="var(--bauhaus-mustard)" stroke="var(--border-color)" stroke-width="3" class="yantra-bindu" />
+                </svg>
+            </div>
+            <div class="grid-cell text-cell">
+                <span>हरिः</span>
+                <span>ओम्</span>
+            </div>
+        </div>
+    </div>
+
     <div id="text-modal" class="modal hidden">
         
         <!-- MODULAR BACKGROUND: Controlled by CSS classes -->
@@ -131,6 +155,7 @@
     <!-- JS Modules remain the same -->
     <script src="js/data.js" defer></script>
     <script src="js/theme.js" defer></script>
+    <script src="js/loader.js" defer></script>
     <script src="js/render.js" defer></script>
     <script src="js/text-engine.js" defer></script>
     <script src="js/search.js" defer></script>

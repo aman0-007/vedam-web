@@ -29,27 +29,12 @@
 .card-bg-geometry {
     position: absolute;
     opacity: 0.15; /* Subtle mini-poster effect inside the card */
-    z-index: 0;
+    z-index: var(--z-base);
     background-color: var(--card-hover-color); /* Matches the card's specific primary color */
     transition: opacity var(--transition-speed);
 }
 
 /* Fade out the static background when the card is hovered so the flood takes over cleanly */
-.pdf-card:hover .card-bg-geometry {
-    opacity: 0;
-}
-
-/* --------------------------------------
-   NEW: DYNAMIC CARD BACKGROUND GEOMETRY
----------------------------------------*/
-.card-bg-geometry {
-    position: absolute;
-    opacity: 0.15; 
-    z-index: 0;
-    background-color: var(--card-hover-color); 
-    transition: opacity var(--transition-speed);
-}
-
 .pdf-card:hover .card-bg-geometry {
     opacity: 0;
 }
@@ -393,7 +378,7 @@
     height: 10px;
     background-color: var(--card-hover-color);
     border-radius: 50%;
-    z-index: 0;
+    z-index: var(--z-base);
     transform: scale(0);
     transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
 }
@@ -405,13 +390,15 @@
 /* --------------------------------------
    STRUCTURAL QUADRANTS & TYPOGRAPHY
 ---------------------------------------*/
+
 .card-top {
     display: flex;
+    justify-content: flex-start;
     align-items: flex-start;
     padding: 1.5rem;
     border-bottom: var(--border-thick) var(--border-color);
     position: relative;
-    z-index: 1; /* Keeps content above the flood and bg geometry */
+    z-index: var(--z-content);
 }
 
 .card-bottom {
@@ -422,7 +409,7 @@
     justify-content: flex-start;
     gap: 0.5rem;
     position: relative;
-    z-index: 1;
+    z-index: var(--z-content);
 }
 
 .card-title-top {
@@ -433,16 +420,6 @@
     text-transform: uppercase;
     text-align: right;
     margin: 0;
-}
-
-.card-top {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 1.5rem;
-    border-bottom: var(--border-thick) var(--border-color);
-    position: relative;
-    z-index: 1; 
 }
 
 .card-icon {

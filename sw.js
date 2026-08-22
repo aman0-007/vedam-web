@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'vedam-v2';
+const CACHE_NAME = 'vedam-v3';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -79,6 +79,7 @@ const ASSETS_TO_CACHE = [
     './assets/txts/devi-aparadha-kshamapana-stotram.txt',
     './assets/txts/mandukya-upanishad.txt',
     './assets/txts/isha-upanishad.txt',
+    './assets/txts/vishnu-suktam.txt',
 
     // Meaning Files
     './assets/meanings/durga-suktam-hi.txt',

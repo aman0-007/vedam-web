@@ -365,5 +365,17 @@ const vedasData = [
         bgSvg: "assets/svgs/vishnu-bg.svg",
         iconSvg: "assets/svgs/vishnu-tilak-icon.svg",
         tags: ["Rama", "Stotram", "Thursday"]
-    }
+    },
+
+        {
+                    id: "35",
+                    title: "Vishnu Suktam",
+                    description: "A powerful Vedic hymn revering Lord Vishnu, describing His three cosmic strides and eternal omnipresence.",
+                    txtUrl: "assets/txts/vishnu-suktam.txt",
+                    hoverColor: "var(--bauhaus-blue)", // Blue perfectly represents Vishnu (the cosmic ocean/sky)
+                    cardShape: "bg-shape-20", // Massive Rising Semi-Circle (Represents a rising cosmic presence)
+                    bgSvg: "assets/svgs/vishnu-bg.svg",
+                    iconSvg: "assets/svgs/vishnu-tilak-icon.svg",
+                    tags: ["Vishnu", "Suktam", "Thursday"]
+                }
 ];

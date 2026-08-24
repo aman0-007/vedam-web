@@ -229,7 +229,7 @@ const vedasData = [
         hoverColor: "var(--bauhaus-teal)",
         cardShape: "bg-shape-14", // Inverted half-circle
         bgSvg: "assets/svgs/devi-bg.svg",
-        tags: ["Devi", "Suktam", "Friday"] 
+        tags: ["Devi", "Suktam", "Friday"]
     },
     {
         id: "23",
@@ -239,7 +239,7 @@ const vedasData = [
         hoverColor: "var(--bauhaus-slate)",
         cardShape: "bg-shape-26", // Floating ziggurat
         bgSvg: "assets/svgs/krishna-bg.svg",
-        tags: ["Vishnu", "Suktam", "Thursday"] 
+        tags: ["Vishnu", "Suktam", "Thursday"]
     },
     {
         id: "24",
@@ -367,15 +367,15 @@ const vedasData = [
         tags: ["Rama", "Stotram", "Thursday"]
     },
 
-        {
-                    id: "35",
-                    title: "Vishnu Suktam",
-                    description: "A powerful Vedic hymn revering Lord Vishnu, describing His three cosmic strides and eternal omnipresence.",
-                    txtUrl: "assets/txts/vishnu-suktam.txt",
-                    hoverColor: "var(--bauhaus-blue)", // Blue perfectly represents Vishnu (the cosmic ocean/sky)
-                    cardShape: "bg-shape-20", // Massive Rising Semi-Circle (Represents a rising cosmic presence)
-                    bgSvg: "assets/svgs/vishnu-bg.svg",
-                    iconSvg: "assets/svgs/vishnu-tilak-icon.svg",
-                    tags: ["Vishnu", "Suktam", "Thursday"]
-                }
+    {
+        id: "35",
+        title: "Vishnu Suktam",
+        description: "A sacred hymn honoring Lord Vishnu's eternal omnipresence.",
+        txtUrl: "assets/txts/vishnu-suktam.txt",
+        hoverColor: "var(--bauhaus-blue)", // Blue perfectly represents Vishnu (the cosmic ocean/sky)
+        cardShape: "bg-shape-20", // Massive Rising Semi-Circle (Represents a rising cosmic presence)
+        bgSvg: "assets/svgs/vishnu-bg.svg",
+        iconSvg: "assets/svgs/vishnu-tilak-icon.svg",
+        tags: ["Vishnu", "Suktam", "Thursday"]
+    }
 ];

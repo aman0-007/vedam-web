@@ -2,7 +2,7 @@
 
 .filter-bar {
     width: 100%;
-    margin: 0 0 1rem 0;
+    margin: 0 0 2rem 0;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -23,7 +23,7 @@
 
     padding-left: 4px; 
     padding-right: 2rem; 
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE/Edge */
@@ -39,10 +39,6 @@
     letter-spacing: 2px;
     color: var(--text-color);
     margin-left: 15%;
-
-    margin-top: 0;
-    margin-bottom: -50px; /* Change to 0 for zero gap, or tweak like 4px/8px */
-    /* line-height: 1; */
 }
 
 .filter-btn {

@@ -302,6 +302,8 @@ const vedasData = [
         title: "Sri Suktam",
         description: "Vedic hymn invoking Goddess Lakshmi for wealth and prosperity.",
         txtUrl: "assets/txts/sri-suktam.txt",
+        hiUrl: "assets/meanings/sri-suktam-hi.txt",
+        enUrl: "assets/meanings/sri-suktam-en.txt",
         hoverColor: "var(--bauhaus-magenta)",
         cardShape: "bg-shape-17", // Target / Lotus center
         bgSvg: "assets/svgs/devi-bg.svg",

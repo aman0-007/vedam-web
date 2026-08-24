@@ -96,7 +96,7 @@
 .content-grid {
     max-width: 1100px;
     /* Pushed to the right slightly to balance the vertical line */
-    margin: 0rem auto 6rem 15%; 
+    margin: 6rem auto 6rem 15%; 
     padding: 0 2rem;
     display: grid;
     /* Shrinking the cards: reduced minmax from 300px to 220px */

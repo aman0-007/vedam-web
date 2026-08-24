@@ -207,6 +207,8 @@ const vedasData = [
         title: "Medha Suktam",
         description: "Vedic prayer for intellect, memory, and divine wisdom.",
         txtUrl: "assets/txts/medha-suktam.txt",
+        hiUrl: "assets/meanings/medha-suktam-hi.txt",
+        enUrl: "assets/meanings/medha-suktam-en.txt",
         hoverColor: "var(--bauhaus-yellow)",
         cardShape: "bg-shape-22", // Hollow window (opening mind)
         tags: ["Devi", "Suktam", "Wednesday"]

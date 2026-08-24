@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'vedam-v5';
+const CACHE_NAME = 'vedam-v7';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -115,7 +115,9 @@ const ASSETS_TO_CACHE = [
     './assets/meanings/lingashtakam-hi.txt',
     './assets/meanings/lingashtakam-en.txt',
     './assets/meanings/sri-suktam-hi.txt',
-    './assets/meanings/sri-suktam-en.txt'
+    './assets/meanings/sri-suktam-en.txt',
+    './assets/meanings/medha-suktam-hi.txt',
+    './assets/meanings/medha-suktam-en.txt',
 ];
 
 self.addEventListener('install', (event) => {

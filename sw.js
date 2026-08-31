@@ -80,6 +80,8 @@ const ASSETS_TO_CACHE = [
     './assets/txts/mandukya-upanishad.txt',
     './assets/txts/isha-upanishad.txt',
     './assets/txts/vishnu-suktam.txt',
+    './assets/txts/hanuman-chalisa.txt',
+    './assets/txts/sri-gananayakashtakam.txt',
 
     // Meaning Files
     './assets/meanings/durga-suktam-hi.txt',
@@ -118,6 +120,10 @@ const ASSETS_TO_CACHE = [
     './assets/meanings/sri-suktam-en.txt',
     './assets/meanings/medha-suktam-hi.txt',
     './assets/meanings/medha-suktam-en.txt',
+    './assets/meanings/hanuman-chalisa-hi.txt',
+    './assets/meanings/hanuman-chalisa-en.txt',
+    './assets/meanings/sri-gananayakashtakam-hi.txt',
+    './assets/meanings/sri-gananayakashtakam-en.txt'
 ];
 
 self.addEventListener('install', (event) => {

@@ -381,5 +381,27 @@ const vedasData = [
         bgSvg: "assets/svgs/vishnu-bg.svg",
         iconSvg: "assets/svgs/vishnu-tilak-icon.svg",
         tags: ["Vishnu", "Suktam", "Thursday"]
+    },
+    {
+        id: "36",
+        title: "Hanuman Chalisa",
+        description: "Forty powerful verses praising Lord Hanuman's devotion, immense strength, and glory.",
+        txtUrl: "assets/txts/hanuman-chalisa.txt",
+        hiUrl: "assets/meanings/hanuman-chalisa-hi.txt",
+        enUrl: "assets/meanings/hanuman-chalisa-en.txt",
+        hoverColor: "var(--bauhaus-orange)", // Saffron/Orange representing Bajrangbali
+        cardShape: "bg-shape-10", // Heavy right-angled triangle (representing immense strength and stability)
+        tags: ["Hanuman", "Chalisa", "Tuesday"]
+    },
+    {
+        id: "37",
+        title: "Shri Gananayaka Ashtakam",
+        description: "A powerful eight-verse hymn dedicated to Lord Ganesha for removing obstacles and attaining success.",
+        txtUrl: "assets/txts/sri-gananayakashtakam.txt",
+        hiUrl: "assets/meanings/sri-gananayakashtakam-hi.txt",
+        enUrl: "assets/meanings/sri-gananayakashtakam-en.txt",
+        hoverColor: "var(--bauhaus-yellow)", // Represents wisdom, auspicious beginnings, and the golden glow (Taptakanchana)
+        cardShape: "bg-shape-4", // Archway (Symbolizing an auspicious entry/beginning)
+        tags: ["Ganesha", "Ashtakam", "Wednesday"]
     }
 ];

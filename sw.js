@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'vedam-v8';
+const CACHE_NAME = 'vedam-v9';
 
 const ASSETS_TO_CACHE = [
     './',

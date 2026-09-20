@@ -16,12 +16,12 @@ const filterConfig = {
         ]
     },
     "GODS": {
-        broadMatch: ["Ganesha", "Shiva", "Devi", "Vishnu", "Surya", "Rama", "Navagraha"],
+        broadMatch: ["Ganesha", "Shiva", "Devi", "Vishnu", "Surya", "Rama", "Navagraha", "Hanuman"],
         children: [
             { label: "GANESHA", value: "Ganesha" }, { label: "SHIVA", value: "Shiva" },
             { label: "VISHNU", value: "Vishnu" }, { label: "DEVI", value: "Devi" },
             { label: "SURYA", value: "Surya" }, { label: "RAMA", value: "Rama" },
-            { label: "NAVAGRAHA", value: "Navagraha" }
+            { label: "NAVAGRAHA", value: "Navagraha" }, { label: "HANUMAN", value: "Hanuman" }
         ]
     },
     "SUKTAM": {
@@ -31,11 +31,12 @@ const filterConfig = {
             { label: "NARAYANA", value: "Narayana" }, { label: "MEDHA", value: "Medha" },
             { label: "BHU", value: "Bhu" }, { label: "NILA", value: "Nila" },
             { label: "BHAGYA", value: "Bhagya" }, { label: "DURGA", value: "Durga" },
-            { label: "DURVA", value: "Durva" }, { label: "NAVAGRAHA", value: "Navagraha" }
+            { label: "DURVA", value: "Durva" }, { label: "NAVAGRAHA", value: "Navagraha" },
+            { label: "VISHNU", value: "Vishnu Suktam" }, { label: "GANESHA", value: "Ganesha Suktam" }
         ]
     },
     "STOTRAM": {
-        broadMatch: ["Stotram"],
+        broadMatch: ["Stotram", "Ashtakam", "Chalisa"],
         children: [
             { label: "ADITYA", value: "Aditya" }, { label: "BHAJA GOVINDAM", value: "Bhaja" },
             { label: "MAHISHASURA", value: "Mahishasura" }, { label: "TANDAVA", value: "Tandava" },
@@ -45,7 +46,9 @@ const filterConfig = {
             { label: "RUDRASHTAKAM", value: "Rudrashtakam" },
             { label: "SHRI RAMA", value: "Shri Rama" }, 
             { label: "NAMA RAMAYANA", value: "Nama Ramayana" },
-            { label: "DEVI APARADHA", value: "Aparadha" }
+            { label: "DEVI APARADHA", value: "Aparadha" },
+            { label: "HANUMAN CHALISA", value: "Chalisa" },
+            { label: "GANANAYAKA", value: "Gananayaka" }
         ]
     },
     "PATH": {

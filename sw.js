@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'vedam-v9';
+const CACHE_NAME = 'vedam-v10';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -82,6 +82,7 @@ const ASSETS_TO_CACHE = [
     './assets/txts/vishnu-suktam.txt',
     './assets/txts/hanuman-chalisa.txt',
     './assets/txts/sri-gananayakashtakam.txt',
+    './assets/txts/ganesha-suktam.txt',
 
     // Meaning Files
     './assets/meanings/durga-suktam-hi.txt',
@@ -123,7 +124,17 @@ const ASSETS_TO_CACHE = [
     './assets/meanings/hanuman-chalisa-hi.txt',
     './assets/meanings/hanuman-chalisa-en.txt',
     './assets/meanings/sri-gananayakashtakam-hi.txt',
-    './assets/meanings/sri-gananayakashtakam-en.txt'
+    './assets/meanings/sri-gananayakashtakam-en.txt',
+    './assets/meanings/ganapati-atharvashirsham-hi.txt',
+    './assets/meanings/ganapati-atharvashirsham-en.txt',
+    './assets/meanings/ganesha-suktam-hi.txt',
+    './assets/meanings/ganesha-suktam-en.txt',
+    './assets/meanings/mantra-pushpam-hi.txt',
+    './assets/meanings/mantra-pushpam-en.txt',
+    './assets/meanings/narayana-suktam-hi.txt',
+    './assets/meanings/narayana-suktam-en.txt',
+    './assets/meanings/vishnu-suktam-hi.txt',
+    './assets/meanings/vishnu-suktam-en.txt'
 ];
 
 self.addEventListener('install', (event) => {

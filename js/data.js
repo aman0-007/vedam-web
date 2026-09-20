@@ -51,6 +51,8 @@ const vedasData = [
         title: "Mantra Pushpam",
         description: "The flower of Vedic chants.",
         txtUrl: "assets/txts/mantra-pushpam.txt",
+        hiUrl: "assets/meanings/mantra-pushpam-hi.txt",
+        enUrl: "assets/meanings/mantra-pushpam-en.txt",
         hoverColor: "var(--bauhaus-pink)", // Lotus/Flowers
         cardShape: "bg-shape-25", // Alternating quadrant petals
         tags: ["Generic", "Mantra", "Rudram"]
@@ -69,6 +71,8 @@ const vedasData = [
         title: "Ganapati Atharvashirsham",
         description: "Upanishad dedicated to Ganesha.",
         txtUrl: "assets/txts/ganapati-atharvashirsham.txt",
+        hiUrl: "assets/meanings/ganapati-atharvashirsham-hi.txt",
+        enUrl: "assets/meanings/ganapati-atharvashirsham-en.txt",
         hoverColor: "var(--bauhaus-red)", // Sindoor
         cardShape: "bg-shape-23", // Hexagon (intellect/structure)
         tags: ["Ganesha", "Upanishad", "Atharvashirsham", "Tuesday"],
@@ -218,6 +222,8 @@ const vedasData = [
         title: "Narayana Suktam",
         description: "Hymn dedicated to Lord Narayana, the supreme cosmic being.",
         txtUrl: "assets/txts/narayana-suktam.txt",
+        hiUrl: "assets/meanings/narayana-suktam-hi.txt",
+        enUrl: "assets/meanings/narayana-suktam-en.txt",
         hoverColor: "var(--bauhaus-blue)",
         cardShape: "bg-shape-7", // Crossing beams (Cosmic web)
         bgSvg: "assets/svgs/krishna-bg.svg",
@@ -376,6 +382,8 @@ const vedasData = [
         title: "Vishnu Suktam",
         description: "A sacred hymn honoring Lord Vishnu's eternal omnipresence.",
         txtUrl: "assets/txts/vishnu-suktam.txt",
+        hiUrl: "assets/meanings/vishnu-suktam-hi.txt",
+        enUrl: "assets/meanings/vishnu-suktam-en.txt",
         hoverColor: "var(--bauhaus-blue)", // Blue perfectly represents Vishnu (the cosmic ocean/sky)
         cardShape: "bg-shape-20", // Massive Rising Semi-Circle (Represents a rising cosmic presence)
         bgSvg: "assets/svgs/vishnu-bg.svg",
@@ -403,5 +411,18 @@ const vedasData = [
         hoverColor: "var(--bauhaus-yellow)", // Represents wisdom, auspicious beginnings, and the golden glow (Taptakanchana)
         cardShape: "bg-shape-4", // Archway (Symbolizing an auspicious entry/beginning)
         tags: ["Ganesha", "Ashtakam", "Wednesday"]
+    },
+    {
+        id: "38",
+        title: "Ganesha Suktam",
+        description: "A powerful Vedic hymn dedicated to Lord Ganesha, the remover of obstacles.",
+        txtUrl: "assets/txts/ganesha-suktam.txt",
+        hiUrl: "assets/meanings/ganesha-suktam-hi.txt",
+        enUrl: "assets/meanings/ganesha-suktam-en.txt",
+        hoverColor: "var(--bauhaus-coral)", // Red/Coral matches Ganesha
+        cardShape: "bg-shape-13", // Grounded circular corner shape
+        bgSvg: "assets/svgs/ganesh-bg.svg",
+        iconSvg: "assets/svgs/ganesh-icon.svg",
+        tags: ["Ganesha", "Suktam", "Wednesday"]
     }
 ];

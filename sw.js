@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'vedam-v12';
+const CACHE_NAME = 'vedam-v13'; // Bumped version to ensure new SVGs are cached
 
 const ASSETS_TO_CACHE = [
     './',
@@ -32,17 +32,23 @@ const ASSETS_TO_CACHE = [
     // Brand Assets
     './assets/favicon.svg',
 
-    // NEW: Background & Icon SVGs
+    // Background & Icon SVGs (Updated)
+    './assets/svgs/adiyogi-bg.svg',
+    './assets/svgs/bhairav-bg.svg',
+    './assets/svgs/devi-bg.svg',
     './assets/svgs/ganesh-bg.svg',
     './assets/svgs/ganesh-icon.svg',
+    './assets/svgs/krishna-bg.svg',
+    './assets/svgs/narayan-2-bg.svg',
+    './assets/svgs/narayan-bg.svg',
+    './assets/svgs/narayan-tilak-icon.svg',
+    './assets/svgs/rudra-bg.svg',
+    './assets/svgs/shiv-bg.svg',
+    './assets/svgs/shiv-tilak-icon.svg',
+    './assets/svgs/shiva-bg.svg',
+    './assets/svgs/trishool-bg.svg',
     './assets/svgs/vishnu-bg.svg',
     './assets/svgs/vishnu-tilak-icon.svg',
-    './assets/svgs/krishna-bg.svg',
-    './assets/svgs/trishool-bg.svg',
-    './assets/svgs/adiyogi-bg.svg',
-    './assets/svgs/rudra-bg.svg',
-    './assets/svgs/shiva-bg.svg',
-    './assets/svgs/devi-bg.svg',
 
     // Text Files
     './assets/txts/ganapati-prarthana.txt',
@@ -193,4 +199,3 @@ self.addEventListener('fetch', (event) => {
         })
     );
 });
-

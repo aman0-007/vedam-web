@@ -421,7 +421,9 @@ const vedasData = [
         hiUrl: `${MEANING_PATH}/hanuman-chalisa-hi.txt`,
         enUrl: `${MEANING_PATH}/hanuman-chalisa-en.txt`,
         hoverColor: "var(--bauhaus-orange)", // Saffron/Orange representing Bajrangbali
-        cardShape: "bg-shape-10", // Heavy right-angled triangle (representing immense strength and stability)
+        cardShape: "bg-shape-10",
+        bgSvg: `${SVG_PATH}/ram-darbar-bg.svg`,
+        iconSvg: `${SVG_PATH}/hanuman-gada-icon.svg`,
         tags: ["Hanuman", "Chalisa", "Tuesday"]
     },
     {

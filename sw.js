@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'vedam-v13'; // Bumped version to ensure new SVGs are cached
+const CACHE_NAME = 'vedam-v14'; // Bumped version to ensure new SVGs are cached
 
 const ASSETS_TO_CACHE = [
     './',
@@ -49,6 +49,8 @@ const ASSETS_TO_CACHE = [
     './assets/svgs/trishool-bg.svg',
     './assets/svgs/vishnu-bg.svg',
     './assets/svgs/vishnu-tilak-icon.svg',
+    './assets/svgs/ram-darbar-bg.svg',
+    './assets/svgs/hanuman-gada-icon.svg',
 
     // Text Files
     './assets/txts/ganapati-prarthana.txt',

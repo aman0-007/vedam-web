@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'vedam-v14'; // Bumped version to ensure new SVGs are cached
+const CACHE_NAME = 'vedam-v15'; // Bumped version to ensure new SVGs are cached
 
 const ASSETS_TO_CACHE = [
     './',
